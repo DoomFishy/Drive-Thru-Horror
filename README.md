@@ -1,2 +1,2 @@
-# Scream Jam 2025
-A game jam project
+# Drive Thru Horror
+A game jam project for Scream Jam 2025
