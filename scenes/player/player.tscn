@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt0hn2cgtf5g1"]
+[gd_scene load_steps=7 format=3 uid="uid://dt0hn2cgtf5g1"]
 
-[ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/player.gd" id="1_dovo2"]
-[ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/head.gd" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/scripts/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/scripts/head.gd" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://b81ipwmbcngqb" path="res://scenes/player/scripts/interact_controller.gd" id="3_gmlin"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x7p2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_gmlin"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 2
 script = ExtResource("1_dovo2")
 speed = 10.0
 jump_power = 8.0
@@ -25,3 +29,29 @@ script = ExtResource("2_dovo2")
 camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
+target_position = Vector3(0, 0, -5)
+collision_mask = 14
+
+[node name="ItemHolder" type="Node3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42254293, -0.17254883, -0.55524206)
+
+[node name="InteractController" type="Node" parent="." node_paths=PackedStringArray("raycast", "itemHolder")]
+script = ExtResource("3_gmlin")
+raycast = NodePath("../head/Camera3D/InteractRaycast")
+itemHolder = NodePath("../head/ItemHolder")
+
+[node name="tempCrosshair" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="tempCrosshair"]
+scale = Vector2(10, 10)
+mesh = SubResource("SphereMesh_gmlin")

@@ -18,7 +18,6 @@ func _input(event: InputEvent) -> void:
 		rotate_x(-event.relative.y * sens)
 		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
-
 func _process(delta: float) -> void:
 	bob_time += delta * player.velocity.length() * float(player.is_on_floor())
 	camera.transform.origin = head_bob()

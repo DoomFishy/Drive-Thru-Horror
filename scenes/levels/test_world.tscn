@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://buahw34qee6w5"]
+[gd_scene load_steps=8 format=3 uid="uid://buahw34qee6w5"]
 
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="1_1mgh8"]
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="2_0huwb"]
+[ext_resource type="PackedScene" uid="uid://ifllmt2qup1j" path="res://scenes/dummy_items/dummy_item.tscn" id="3_0huwb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a5hx"]
 
@@ -28,13 +29,18 @@ shadow_enabled = true
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045814514, -0.35473633, -0.18376923)
 use_collision = true
+collision_layer = 2
 size = Vector3(39.45375, 0.29052734, 48.29338)
 material = SubResource("StandardMaterial3D_8a5hx")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(0.8757006, 0.12900476, -0.46530226, 0, 0.9636491, 0.2671711, 0.48285446, -0.23396191, 0.8438681, 1.6297703, 3.2519016, 6.0166836)
 use_collision = true
+collision_layer = 2
 size = Vector3(3.032671, 8.925537, 3.9626064)
 
 [node name="Player" parent="." instance=ExtResource("1_1mgh8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20424843, 0.7905276, -0.32461023)
+
+[node name="DummyItem" parent="." instance=ExtResource("3_0huwb")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.53334, -0.059472173, -5.4248867)
