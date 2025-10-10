@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt0hn2cgtf5g1"]
+
+[ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/head.gd" id="2_dovo2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x7p2l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_dovo2")
+speed = 10.0
+jump_power = 8.0
+gravity = 20.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_x7p2l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_x7p2l")
+
+[node name="head" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57272524, 0)
+script = ExtResource("2_dovo2")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="head"]
