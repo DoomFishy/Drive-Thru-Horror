@@ -26,6 +26,10 @@ folder_colors={
 "res://assets/prototype/Red/": "red"
 }
 
+[global_group]
+
+ingredient=""
+
 [input]
 
 up={
