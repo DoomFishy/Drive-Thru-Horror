@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4fdhp7mqwg3m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ef6p8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rxyol"]
+
+[node name="CctvCamera" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.94587034, 0.32454482, 0, -0.32454482, 0.94587034, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00023899227, -0.31709442)
+
+[node name="Camera_Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.29298592, 0, 0, 0, 0.31645846, 0, 0, 0, 0.6372254, 0, 0, 0)
+mesh = SubResource("BoxMesh_ef6p8")
+
+[node name="Camera_Arm" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.18893258, -0.03280424, 0, 0.06560848, 0.09446629, 0, 0.23280382, 0.13474238)
+mesh = SubResource("CylinderMesh_rxyol")

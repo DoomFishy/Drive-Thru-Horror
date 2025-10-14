@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://buahw34qee6w5"]
+[gd_scene load_steps=13 format=3 uid="uid://buahw34qee6w5"]
 
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="1_1mgh8"]
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="2_0huwb"]
 [ext_resource type="PackedScene" uid="uid://ifllmt2qup1j" path="res://scenes/dummy_items/dummy_item.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/commerical_flat_top.glb" id="4_eulud"]
+[ext_resource type="PackedScene" uid="uid://b4fdhp7mqwg3m" path="res://assets/models/CCTV_Camera.tscn" id="5_a8c4q"]
+[ext_resource type="PackedScene" uid="uid://dmwwxu20706p4" path="res://assets/models/Monitor.tscn" id="6_a8c4q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a5hx"]
 
@@ -16,6 +19,12 @@ sky = SubResource("Sky_0huwb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a5hx"]
 albedo_texture = ExtResource("2_0huwb")
 uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d4tmt"]
+viewport_path = NodePath("CameraView1")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a8c4q"]
+viewport_path = NodePath("CameraView2")
 
 [node name="TestWorld" type="Node3D"]
 
@@ -44,3 +53,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20424843, 0.7905276, -0.324
 
 [node name="DummyItem" parent="." instance=ExtResource("3_0huwb")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.53334, -0.059472173, -5.4248867)
+
+[node name="commerical_flat_top" parent="." instance=ExtResource("4_eulud")]
+transform = Transform3D(-0.044695534, 0, -0.34883058, 0, 0.30961496, 0, 0.25405136, 0, -0.061370146, 2.499474, 0.37339345, -4.3807116)
+
+[node name="CameraView1" type="SubViewport" parent="."]
+
+[node name="CctvCamera" parent="CameraView1" instance=ExtResource("5_a8c4q")]
+transform = Transform3D(0.5300822, -0.2751966, 0.80204725, 1.120525e-09, 0.9458706, 0.32454488, -0.84794635, -0.17203549, 0.501389, -0.17553866, 2.1373458, 5.3051357)
+
+[node name="Monitor" parent="CameraView1" instance=ExtResource("6_a8c4q")]
+transform = Transform3D(-0.52505577, 0, -0.85106784, 0, 1, 0, 0.85106784, 0, -0.52505577, 0.17192227, 0.82357955, 5.4305463)
+
+[node name="Sprite3D" type="Sprite3D" parent="CameraView1/Monitor"]
+transform = Transform3D(0.18345553, 0, 1.1641532e-10, 0, 0.08915836, 0, 2.9802322e-08, 0, 0.0028275494, 0.0070061684, 0.47674954, 0.049876213)
+texture = SubResource("ViewportTexture_d4tmt")
+
+[node name="CameraView2" type="SubViewport" parent="."]
+
+[node name="CctvCamera" parent="CameraView2" instance=ExtResource("5_a8c4q")]
+transform = Transform3D(0.85535944, 0.25632066, -0.45017764, 0.07104277, 0.80275905, 0.5920569, 0.5131405, -0.5384033, 0.66843766, 2.5866942, 2.2617764, 4.0879393)
+
+[node name="Monitor" parent="CameraView2" instance=ExtResource("6_a8c4q")]
+transform = Transform3D(-0.8569245, 0, 0.5154419, 0, 1, 0, -0.5154419, 0, -0.8569245, 2.7295735, 0.40265197, 4.1362543)
+
+[node name="Sprite3D" type="Sprite3D" parent="CameraView2/Monitor"]
+transform = Transform3D(0.18, 0, 0, 0, 0.08, 0, 0, 0, 1, 0.011473656, 0.48194617, 0.017883062)
+texture = SubResource("ViewportTexture_a8c4q")
