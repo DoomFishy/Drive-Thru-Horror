@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c45u13vpmt705"]
+[gd_scene load_steps=14 format=3 uid="uid://c45u13vpmt705"]
 
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="1_o0vly"]
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="2_4g3lu"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bvbnxnus21m8j" path="res://scenes/assembly_system/ingredients/ingredient_onion.tscn" id="5_a3qrb"]
 [ext_resource type="PackedScene" uid="uid://beicbyn5cy1e0" path="res://scenes/assembly_system/ingredients/ingredient_bottom_bun.tscn" id="5_kss6m"]
 [ext_resource type="PackedScene" uid="uid://dfwikv18bu8is" path="res://scenes/assembly_system/assembly_machine.tscn" id="8_a3qrb"]
+[ext_resource type="PackedScene" uid="uid://p4m0wthqe1pm" path="res://scenes/assembly_system/ingredients/ingredient_tomato.tscn" id="8_ydyd0"]
+[ext_resource type="PackedScene" uid="uid://dv0k5kwyl7xh7" path="res://scenes/assembly_system/ingredients/ingredient_top_bun.tscn" id="9_n6xxx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_aoneb"]
 
@@ -44,13 +46,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20424843, 0.7905276, -0.324
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3857994, 0.24890184, -4.1331434)
 
 [node name="IngredientsContainer" parent="." instance=ExtResource("3_4g3lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.512943, -0.036098152, 3.484818)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.7222133, -0.036098152, 3.5012164)
 ingredient = ExtResource("5_kss6m")
 
 [node name="IngredientsContainer2" parent="." instance=ExtResource("3_4g3lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.560658, -0.03609839, 6.04232)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.279715, -0.03609839, 3.4535012)
 ingredient = ExtResource("5_a3qrb")
 
 [node name="IngredientsContainer3" parent="." instance=ExtResource("3_4g3lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6683636, -0.03609863, 8.221956)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.459352, -0.03609863, 3.3457956)
 ingredient = ExtResource("4_kss6m")
+
+[node name="IngredientsContainer4" parent="." instance=ExtResource("3_4g3lu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.224038, -0.03609863, 3.3457956)
+ingredient = ExtResource("8_ydyd0")
+
+[node name="IngredientsContainer5" parent="." instance=ExtResource("3_4g3lu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.713812, -0.03609863, 3.3457956)
+ingredient = ExtResource("9_n6xxx")

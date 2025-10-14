@@ -11,6 +11,8 @@ func _on_item_area_entered(area: Area3D) -> void:
 		add_ingredient(area)
 
 func spawn_packaged_burger():
+	if ingredientArray.size() <= 0:
+		return
 	$TempLabel.text = ""
 	var instance = packagedBurger.instantiate()
 	instance.pass_ingredients(ingredientArray)
