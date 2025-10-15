@@ -1,12 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt0hn2cgtf5g1"]
+[gd_scene load_steps=11 format=3 uid="uid://dt0hn2cgtf5g1"]
 
 [ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/scripts/player.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/scripts/head.gd" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://b81ipwmbcngqb" path="res://scenes/player/scripts/interact_controller.gd" id="3_gmlin"]
+[ext_resource type="Shader" uid="uid://b3afst3doe333" path="res://assets/shaders/pixelate.gdshader" id="3_lvxji"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x7p2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lvxji"]
+flip_faces = true
+size = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvxji"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
+shader = ExtResource("3_lvxji")
+shader_parameter/exposure = 1.0
+shader_parameter/contrast = 1.05
+shader_parameter/saturation = 0.9
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 3.0
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 16.0
+shader_parameter/dither_strength = 0.35
+shader_parameter/chrom_aberration = 0.0
+shader_parameter/vignette_strength = 1.0
+shader_parameter/grain_strength = 0.2
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
 
 [sub_resource type="SphereMesh" id="SphereMesh_gmlin"]
 
@@ -33,6 +57,16 @@ camera = NodePath("Camera3D")
 [node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
 target_position = Vector3(0, 0, -5)
 collision_mask = 14
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5742756)
+mesh = SubResource("QuadMesh_lvxji")
+surface_material_override/0 = SubResource("ShaderMaterial_lvxji")
+
+[node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
+material = SubResource("ShaderMaterial_p47bc")
+offset_right = 1174.0
+offset_bottom = 667.0
 
 [node name="ItemHolder" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42254293, -0.17254883, -0.55524206)
