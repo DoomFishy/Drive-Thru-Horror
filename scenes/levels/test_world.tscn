@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buahw34qee6w5"]
+[gd_scene load_steps=14 format=3 uid="uid://buahw34qee6w5"]
 
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="1_1mgh8"]
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="2_0huwb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/commerical_flat_top.glb" id="4_eulud"]
 [ext_resource type="PackedScene" uid="uid://b4fdhp7mqwg3m" path="res://assets/models/CCTV_Camera.tscn" id="5_a8c4q"]
 [ext_resource type="PackedScene" uid="uid://dmwwxu20706p4" path="res://assets/models/Monitor.tscn" id="6_a8c4q"]
+[ext_resource type="PackedScene" uid="uid://d2d6wntghomxv" path="res://scenes/NCP/Test_Dummy.tscn" id="7_d4tmt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a5hx"]
 
@@ -80,3 +81,6 @@ transform = Transform3D(-0.8569245, 0, 0.5154419, 0, 1, 0, -0.5154419, 0, -0.856
 [node name="Sprite3D" type="Sprite3D" parent="CameraView2/Monitor"]
 transform = Transform3D(0.18, 0, 0, 0, 0.08, 0, 0, 0, 1, 0.011473656, 0.48194617, 0.017883062)
 texture = SubResource("ViewportTexture_a8c4q")
+
+[node name="TestDummy" parent="." instance=ExtResource("7_d4tmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.216421, 0.74890184, -2.474411)
