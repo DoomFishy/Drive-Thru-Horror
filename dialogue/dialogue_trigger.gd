@@ -5,9 +5,9 @@ extends Node3D
 @onready var npc_name: RichTextLabel = get_tree().current_scene.get_node("dialogue_ui/canvas/npc_name")
 @onready var dialogue_text: RichTextLabel = get_tree().current_scene.get_node("dialogue_ui/canvas/dialogue_text")
 @onready var player: CharacterBody3D = get_tree().current_scene.get_node("Player")
-@onready var options_container: VBoxContainer = dialogue_ui.get_node("options") 
-@export_file("*.json") var dialogue_file_path: String = ""
+@onready var options_container: VBoxContainer = dialogue_ui.get_node("options")
 
+@export_file("*.json") var dialogue_file_path: String = ""
 @export var npc: Node3D
 @export var npc_display_name: String = "NPC"
 
@@ -15,21 +15,20 @@ var dialogue_data = {}
 var current_id = 0
 var started = false
 var original_speed: float
+var has_spoken = false  # 🧠 new flag
 
 func _ready() -> void:
 	dialogue_ui.visible = false
-	
 	if dialogue_file_path != "":
 		_load_dialogue_file(dialogue_file_path)
 	else:
-		_create_sample_dialogue() # fallback for testing
+		_create_sample_dialogue()
 
 func _load_dialogue_file(path: String) -> void:
 	var file = FileAccess.open(path, FileAccess.READ)
 	if file:
 		var data = JSON.parse_string(file.get_as_text())
 		if typeof(data) == TYPE_DICTIONARY:
-			# Convert string keys ("1", "2", etc.) to ints for consistency
 			dialogue_data.clear()
 			for key in data.keys():
 				dialogue_data[int(key)] = data[key]
@@ -40,7 +39,8 @@ func _load_dialogue_file(path: String) -> void:
 		push_warning("❌ Failed to open dialogue file: " + path)
 
 func start_dialogue(body):
-	if body == player and !started:
+	# 👇 Only start if not already spoken and not mid-dialogue
+	if body == player and !started and !has_spoken:
 		started = true
 		original_speed = player.speed
 		player.speed = 0.0
@@ -49,7 +49,7 @@ func start_dialogue(body):
 		npc.look_at(player.global_transform.origin)
 		npc.rotation_degrees.x = 0
 		npc.rotation_degrees.z = 0
-		current_id = 1  # 👈 Start at "1" because your JSON uses that
+		current_id = 1
 		_display_current_dialogue()
 
 func _display_current_dialogue():
@@ -98,6 +98,7 @@ func end_dialogue():
 	player.get_node("head").sens = 0.0025
 	dialogue_ui.visible = false
 	started = false
+	has_spoken = true  # 🔒 lock NPC from future dialogue
 	current_id = 1
 
 func _create_sample_dialogue():
