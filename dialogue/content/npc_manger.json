@@ -1,0 +1,82 @@
+{
+	"1": {
+		"text": "Oh, you must be the new hire. Don’t touch the fryer until you’ve had your orientation, understood?",
+		"options": [
+			{"text": "1. What’s so special about the fryer?", "next_id": 2},
+			{"text": "2. I just wanted to ask about the night shift.", "next_id": 3},
+			{"text": "3. I heard someone went missing here.", "next_id": 4},
+			{"text": "4. Sorry, sir.", "next_id": "end"}
+		]
+	},
+
+	"2": {
+		"text": "Special? Hah. Just hot oil and discipline. Nothing ‘special’ about it.",
+		"options": [
+			{"text": "1. The homeless guy says it talks.", "next_id": 5},
+			{"text": "2. You’re lying.", "next_id": 6}
+		]
+	},
+
+	"3": {
+		"text": "Night shift’s where we separate the strong from the useless. You’ll do fine... as long as you don’t wander.",
+		"options": [
+			{"text": "1. Wander where?", "next_id": 7},
+			{"text": "2. Got it, boss.", "next_id": "end"}
+		]
+	},
+
+	"4": {
+		"text": "People love rumors. The only thing missing around here is punctuality.",
+		"options": [
+			{"text": "1. You didn’t answer the question.", "next_id": 6},
+			{"text": "2. Sure thing, sir.", "next_id": "end"}
+		]
+	},
+
+	"5": {
+		"text": "That vagrant behind the dumpster? He also says the sky hums. Ignore him. He eats grease straight from the filters.",
+		"options": [
+			{"text": "1. He mentioned something about salt.", "next_id": 8},
+			{"text": "2. He might be right about the fryer.", "next_id": 9}
+		]
+	},
+
+	"6": {
+		"text": "Watch your tone. Curiosity is a quick way to get burned around here.",
+		"options": [
+			{"text": "1. I’ll stop asking questions.", "next_id": "end"},
+			{"text": "2. What are you hiding?", "next_id": 9}
+		]
+	},
+
+	"7": {
+		"text": "Out back. Past the dumpsters. There’s... waste. Just don’t go there. Not at night.",
+		"options": [
+			{"text": "1. What kind of waste?", "next_id": 8},
+			{"text": "2. I understand.", "next_id": "end"}
+		]
+	},
+
+	"8": {
+		"text": "Salt? Hah... that old trick. Don’t believe everything you hear. Nothing’s alive here. Nothing that shouldn’t be.",
+		"options": [
+			{"text": "1. That’s not convincing.", "next_id": 9},
+			{"text": "2. Sure, boss.", "next_id": "end"}
+		]
+	},
+
+	"9": {
+		"text": "Listen close. You’re here to serve burgers, not secrets. Everyone who pries ends up part of the recipe.",
+		"options": [
+			{"text": "1. (Back away slowly.)", "next_id": "end"},
+			{"text": "2. ...What recipe?", "next_id": 10}
+		]
+	},
+
+	"10": {
+		"text": "You’ll find out soon enough. The fryer’s hungry, and we’re running low on beef.",
+		"options": [
+			{"text": "1. (Leave immediately.)", "next_id": "end"}
+		]
+	}
+}

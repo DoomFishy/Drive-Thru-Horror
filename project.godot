@@ -15,6 +15,10 @@ run/main_scene="uid://b2yv7lmi07hfj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="Scream Jam 2025"
+
 [file_customization]
 
 folder_colors={
