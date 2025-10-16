@@ -7,10 +7,9 @@ func _ready():
 	$StoveTop.area_exited.connect(Callable(self, "_on_stove_top_area_exited"))
 
 func _on_stove_top_area_entered(area):
-	if area.name == "Patty": # Checks if the body is a patty
+	if area.is_in_group("patty"): # Checks if the body is a patty
 		area.start_cooking()
 
-
 func _on_stove_top_area_exited (area):
-		if area.name == "Patty":
+		if area.is_in_group("patty"):
 			area.stop_cooking()

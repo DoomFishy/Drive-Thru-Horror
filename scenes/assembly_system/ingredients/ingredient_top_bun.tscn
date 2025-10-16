@@ -1,15 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv0k5kwyl7xh7"]
+[gd_scene load_steps=4 format=3 uid="uid://dv0k5kwyl7xh7"]
 
 [ext_resource type="Script" uid="uid://b06sqqbq76vml" path="res://scenes/assembly_system/scripts/ingredient.gd" id="1_vq66a"]
+[ext_resource type="PackedScene" uid="uid://k3cxiksdjx8p" path="res://assets/models/ingredients/bun_top.glb" id="2_5dgvb"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cbqj7"]
-height = 0.3
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_hwh45"]
-height = 0.3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jtk5"]
-albedo_color = Color(0.9098039, 0.5058824, 0, 1)
+height = 0.56279296
+radius = 0.6381836
 
 [node name="IngredientTopBun" type="Area3D" groups=["ingredient"]]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -19,8 +15,8 @@ script = ExtResource("1_vq66a")
 ingredientName = "top"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0.25838414, 0)
 shape = SubResource("CylinderShape3D_cbqj7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_hwh45")
-surface_material_override/0 = SubResource("StandardMaterial3D_3jtk5")
+[node name="bun_top" parent="." instance=ExtResource("2_5dgvb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

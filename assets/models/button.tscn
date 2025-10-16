@@ -1,8 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg23q66011yne"]
+[gd_scene load_steps=8 format=3 uid="uid://bg23q66011yne"]
+
+[ext_resource type="Texture2D" uid="uid://bt20jvi3ktfv3" path="res://assets/models/kitchen/assembly_machine_Metal031_1K-JPG_Color.jpg" id="1_x6f4b"]
+[ext_resource type="Texture2D" uid="uid://d7ls1groj4lx" path="res://assets/models/kitchen/commerical_flat_top_Metal029_1K-JPG_Color.jpg" id="2_fpk50"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hye71"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ax0wp"]
+height = 1.5
+radial_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo0o6"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("1_x6f4b")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hye71"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 1.0
+radial_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ord5w"]
+albedo_texture = ExtResource("2_fpk50")
 
 [node name="Button" type="StaticBody3D"]
 collision_layer = 8
@@ -12,5 +30,13 @@ transform = Transform3D(0.7, 0, 0, 0, 0.1, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("CylinderShape3D_hye71")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.2533835, 0)
 mesh = SubResource("CylinderMesh_ax0wp")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo0o6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, -0.17301945, 0)
+mesh = SubResource("CylinderMesh_hye71")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ord5w")

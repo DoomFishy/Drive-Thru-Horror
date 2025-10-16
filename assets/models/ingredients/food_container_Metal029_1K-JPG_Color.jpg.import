@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b73j8aa8xsy2f"
-path.s3tc="res://.godot/imported/Car_car.png-1ae63c0f9c366b5617296ae7439b0a3c.s3tc.ctex"
+uid="uid://caaw54nfjkbv4"
+path.s3tc="res://.godot/imported/food_container_Metal029_1K-JPG_Color.jpg-b592b24b1206a95b3dd476b69909f6ed.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e712633adf3b647d40f6602d70c64c17"
+"md5": "0cd78162b2b59d720a91f03e2f18c668"
 }
 
 [deps]
 
-source_file="res://assets/models/Car_car.png"
-dest_files=["res://.godot/imported/Car_car.png-1ae63c0f9c366b5617296ae7439b0a3c.s3tc.ctex"]
+source_file="res://assets/models/ingredients/food_container_Metal029_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/food_container_Metal029_1K-JPG_Color.jpg-b592b24b1206a95b3dd476b69909f6ed.s3tc.ctex"]
 
 [params]
 

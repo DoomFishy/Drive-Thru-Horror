@@ -10,14 +10,17 @@ extends Node3D
 @export_file("*.json") var dialogue_file_path: String = ""
 @export var npc: Node3D
 @export var npc_display_name: String = "NPC"
+@export var collision : CollisionShape3D
 
 var dialogue_data = {}
 var current_id = 0
 var started = false
 var original_speed: float
 var has_spoken = false  # 🧠 new flag
+var can_speak = false
 
 func _ready() -> void:
+	collision.disabled = true
 	dialogue_ui.visible = false
 	if dialogue_file_path != "":
 		_load_dialogue_file(dialogue_file_path)
@@ -46,7 +49,6 @@ func start_dialogue(body):
 		player.speed = 0.0
 		player.get_node("head").sens = 0.0
 		dialogue_ui.visible = true
-		npc.look_at(player.global_transform.origin)
 		npc.rotation_degrees.x = 0
 		npc.rotation_degrees.z = 0
 		current_id = 1
@@ -100,6 +102,7 @@ func end_dialogue():
 	started = false
 	has_spoken = true  # 🔒 lock NPC from future dialogue
 	current_id = 1
+	collision.disabled = true
 
 func _create_sample_dialogue():
 	dialogue_data = {

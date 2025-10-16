@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b364sm28y051l"]
+[gd_scene load_steps=7 format=3 uid="uid://b364sm28y051l"]
 
 [ext_resource type="Script" uid="uid://b624rrprqhqem" path="res://scenes/cooking/patty.gd" id="1_0ry88"]
+[ext_resource type="Texture2D" uid="uid://d3qxn8rsi8rga" path="res://assets/models/ingredients/patty_Fabric026_1K-JPG_Color.jpg" id="2_reho8"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8ec5h"]
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.1
-radial_segments = 32
+radial_segments = 8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ec5h"]
-albedo_color = Color(0.9779065, 0.61286145, 0.56371737, 1)
+albedo_texture = ExtResource("2_reho8")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_reho8"]
 height = 0.105358124
@@ -19,7 +20,8 @@ radius = 0.19677734
 script/source = "extends CollisionShape3D
 "
 
-[node name="Patty" type="Area3D"]
+[node name="Patty" type="Area3D" groups=["ingredient", "patty"]]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_0ry88")

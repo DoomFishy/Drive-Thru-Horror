@@ -1,9 +1,10 @@
 extends Camera3D
 
 var ray_Range = 2000
+var has_gun = false
 
 func _input(event):
-		if event.is_action_pressed("Fire"):
+		if event.is_action_pressed("Fire") and has_gun:
 			Get_Camera_Collision()
 
 func Get_Camera_Collision():

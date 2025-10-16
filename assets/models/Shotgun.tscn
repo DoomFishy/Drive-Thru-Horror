@@ -1,25 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm8xk0xtcbgyx"]
+[gd_scene load_steps=3 format=3 uid="uid://cm8xk0xtcbgyx"]
+
+[ext_resource type="PackedScene" uid="uid://tr1xt7rnnsmn" path="res://assets/models/gun.glb" id="1_361o0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nwi4l"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_nwi4l"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_361o0"]
+size = Vector3(1, 1, 1.9692383)
 
 [node name="Shotgun" type="StaticBody3D" groups=["gun"]]
-transform = Transform3D(-1.4351405, 0, -1.655827e-07, 0, 1.4247568, 0, 1.2546397e-07, 0, -1.8940454, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3020946, 0, 0, 0, 0.25440827, 0, -1.9539925e-14, 0, 0.50384295, -1.3438785e-08, 0, 0.15853624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91061e-08, 0.13602415, 0.14910078)
 shape = SubResource("BoxShape3D_nwi4l")
 
-[node name="Barrel" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(0.15963268, 0, 7.1054274e-15, 0, 0.21228017, 0, 6.217249e-15, 0, 0.5776762, -4.9326143e-08, 0, -0.016971499)
-mesh = SubResource("BoxMesh_nwi4l")
-skeleton = NodePath("../..")
+[node name="gun" parent="." instance=ExtResource("1_361o0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.2517443e-07, -0.38109288, 0.70177543)
 
-[node name="Grip" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(0.13395487, -8.881784e-16, 0, 0, 0.105780885, 0.41842556, 5.3290705e-15, -0.07089885, 0.15916888, -4.9326147e-08, -0.19487317, -0.21696311)
-mesh = SubResource("BoxMesh_361o0")
-skeleton = NodePath("../..")
+[node name="ShellLowPolyGreen_006" parent="gun" index="2"]
+visible = false
+
+[node name="ShellLowPolyRed_006" parent="gun" index="3"]
+visible = false
+
+[editable path="gun"]

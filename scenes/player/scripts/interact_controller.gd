@@ -19,6 +19,9 @@ func _process(_delta: float) -> void:
 			elif collider.collision_layer == 4 and item == null: # check if wanting to pickup item
 				item = raycast.get_collider()
 				pickup_item()
+				if item.is_in_group("gun"):
+					raycast.get_parent().has_gun = true
+					
 			elif collider.collision_layer == 8:
 				collider.interact() # call method interact from collider object
 				pass
@@ -33,3 +36,5 @@ func drop_item() -> void:
 	itemHolder.remove_child(item) # remove item from hand
 	player.get_parent().add_child(item) # add item to world
 	item.position = raycast.get_collision_point() # set position of item to crosshair
+	if item.is_in_group("gun"):
+		raycast.get_parent().has_gun = false

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cmpjyv0wwq7ec" path="res://scenes/NCP/Scripts/EnemyBehaviour.gd" id="1_4w46t"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_osmg8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w46t"]
+size = Vector3(3.6245728, 2.682129, 2.9803467)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4w46t"]
 
@@ -12,7 +13,9 @@ collision_mask = 16
 script = ExtResource("1_4w46t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_osmg8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10580444, 0.053466797, -0.25738525)
+shape = SubResource("BoxShape3D_4w46t")
+debug_color = Color(0.9476723, 0.0920861, 0.5272838, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_4w46t")

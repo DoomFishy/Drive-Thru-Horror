@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://coef8d8g3xjex"]
 
-[ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/commerical_flat_top.glb" id="1_4ovp7"]
+[ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/kitchen/commerical_flat_top.glb" id="1_4ovp7"]
 [ext_resource type="Script" uid="uid://5utcnsjtqlis" path="res://scenes/cooking/stove.gd" id="1_llilt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_llilt"]
