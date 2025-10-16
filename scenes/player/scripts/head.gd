@@ -27,3 +27,6 @@ func head_bob() -> Vector3:
 	pos.y = sin(bob_time * bob_frequency) * bob_amplitude
 	pos.x = cos(bob_time * bob_frequency / 2) * bob_amplitude
 	return pos
+	
+func set_sense (sensitivity: float):
+	sens = sensitivity

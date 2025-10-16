@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://buahw34qee6w5"]
+[gd_scene load_steps=9 format=3 uid="uid://buahw34qee6w5"]
 
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="1_1mgh8"]
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="2_0huwb"]
 [ext_resource type="PackedScene" uid="uid://ifllmt2qup1j" path="res://scenes/dummy_items/dummy_item.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://b364sm28y051l" path="res://scenes/cooking/patty.tscn" id="4_uyg78"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a5hx"]
 
@@ -27,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7875807, 0.6162115, 0, -0.6162115, 0.78758
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0057811737, -0.39636183, -0.18506384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031198978, -0.3348794, -0.21556234)
 use_collision = true
 collision_layer = 2
 size = Vector3(39.45375, 0.29052734, 48.29338)
@@ -43,4 +44,7 @@ size = Vector3(3.032671, 8.925537, 3.9626064)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20424843, 0.7905276, -0.32461023)
 
 [node name="DummyItem" parent="." instance=ExtResource("3_0huwb")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.53334, -0.059472173, -5.4248867)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.5246434, -0.07216641, -5.3740287)
+
+[node name="Patty" parent="." instance=ExtResource("4_uyg78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2896104, -0.11391145, -4.432927)
