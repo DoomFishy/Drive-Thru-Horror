@@ -1,0 +1,73 @@
+{
+	"1": {
+		"text": "Evening. Smells good tonight. You always keep the fryer running this late?",
+		"options": [
+			{"text": "1. Yeah, it’s part of the job.", "next_id": 2},
+			{"text": "2. You’ve been here before?", "next_id": 3},
+			{"text": "3. Please pull forward.", "next_id": "end"}
+		]
+	},
+
+	"2": {
+		"text": "Part of the job... right. Work never really ends, does it? Not for people like you.",
+		"options": [
+			{"text": "1. What’s that supposed to mean?", "next_id": 4},
+			{"text": "2. You sound tired too.", "next_id": 5}
+		]
+	},
+
+	"3": {
+		"text": "Oh, a few times. I come by when the night’s quiet—when the lights are the only things still alive out here.",
+		"options": [
+			{"text": "1. That’s a strange way to put it.", "next_id": 5},
+			{"text": "2. You’re not from around here, are you?", "next_id": 4}
+		]
+	},
+
+	"4": {
+		"text": "Hmm. Maybe I just notice things. The hum of your machines, the pulse under your skin. Everything in this place feels... warm.",
+		"options": [
+			{"text": "1. Warm?", "next_id": 6},
+			{"text": "2. You’re creeping me out.", "next_id": 7}
+		]
+	},
+
+	"5": {
+		"text": "Tired? No, not tired. Just hungry. It’s been a long night.",
+		"options": [
+			{"text": "1. Hungry for what?", "next_id": 6},
+			{"text": "2. I’ll get your order ready.", "next_id": "end"}
+		]
+	},
+
+	"6": {
+		"text": "You wouldn’t understand. It’s not the food I come for. It’s the sound. The sizzling. The smell when something starts to burn.",
+		"options": [
+			{"text": "1. You should go home.", "next_id": 7},
+			{"text": "2. What are you talking about?", "next_id": 8}
+		]
+	},
+
+	"7": {
+		"text": "Home... that’s a funny word. I think I had one once. A kitchen. A table. People to eat with.",
+		"options": [
+			{"text": "1. What happened to them?", "next_id": 8},
+			{"text": "2. You should probably leave.", "next_id": "end"}
+		]
+	},
+
+	"8": {
+		"text": "They stopped eating. So I found others. You can’t waste good meat, right?",
+		"options": [
+			{"text": "1. What did you just say?", "next_id": 9},
+			{"text": "2. (Stay silent.)", "next_id": 9}
+		]
+	},
+
+	"9": {
+		"text": "Don’t worry. I already ordered. You just keep cooking. I’ll handle the rest.",
+		"options": [
+			{"text": "1. (Stare into the speaker.)", "next_id": "end"}
+		]
+	}
+}

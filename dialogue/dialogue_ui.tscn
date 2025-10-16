@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmg6cd62cxe18"]
+
+[sub_resource type="Animation" id="Animation_dwk8m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialogue_text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x0h1o"]
+resource_name = "scroll"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialogue_text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q285"]
+_data = {
+&"RESET": SubResource("Animation_dwk8m"),
+&"scroll": SubResource("Animation_x0h1o")
+}
+
+[node name="dialogue_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 4.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="canvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="bg" type="ColorRect" parent="canvas"]
+offset_left = 139.0
+offset_top = 302.0
+offset_right = 1001.0
+offset_bottom = 589.0
+color = Color(0, 0, 0, 0.6862745)
+
+[node name="npc_name" type="RichTextLabel" parent="canvas"]
+offset_left = 167.0
+offset_top = 325.0
+offset_right = 969.0
+offset_bottom = 369.0
+theme_override_font_sizes/normal_font_size = 25
+text = "NPC Name"
+
+[node name="dialogue_text" type="RichTextLabel" parent="canvas"]
+offset_left = 168.0
+offset_top = 377.0
+offset_right = 964.0
+offset_bottom = 444.0
+theme_override_font_sizes/normal_font_size = 20
+text = "This is dialogue text...
+
+
+
+
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="options" type="VBoxContainer" parent="canvas"]
+offset_left = 459.0
+offset_top = 450.0
+offset_right = 745.0
+offset_bottom = 552.0
+size_flags_vertical = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="canvas"]
+libraries = {
+&"": SubResource("AnimationLibrary_6q285")
+}

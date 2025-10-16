@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2xt5dfs2dviv"]
+
+[ext_resource type="Script" uid="uid://dnhuoxv7ipa6p" path="res://scenes/assembly_system/scripts/packaged_burger.gd" id="1_qj10i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qj10i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qj10i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jtk5"]
+albedo_color = Color(0.68969107, 0.4082433, 1.92523e-07, 1)
+
+[node name="PackagedBurger" type="Area3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_qj10i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qj10i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_qj10i")
+surface_material_override/0 = SubResource("StandardMaterial3D_3jtk5")

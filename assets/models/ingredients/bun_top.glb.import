@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0ji4n4enn3k5"
-path="res://.godot/imported/commerical_flat_top.glb-96d5ab20f53091e3c4436f9902a7678b.scn"
+uid="uid://k3cxiksdjx8p"
+path="res://.godot/imported/bun_top.glb-1563811f89e3de7cd1de853f7ffda0d9.scn"
 
 [deps]
 
-source_file="res://assets/models/commerical_flat_top.glb"
-dest_files=["res://.godot/imported/commerical_flat_top.glb-96d5ab20f53091e3c4436f9902a7678b.scn"]
+source_file="res://assets/models/ingredients/bun_top.glb"
+dest_files=["res://.godot/imported/bun_top.glb-1563811f89e3de7cd1de853f7ffda0d9.scn"]
 
 [params]
 

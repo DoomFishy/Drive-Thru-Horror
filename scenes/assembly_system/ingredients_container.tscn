@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mda7h5q1uxl1"]
+
+[ext_resource type="Script" uid="uid://bfifxjr5k6y4a" path="res://scenes/assembly_system/scripts/ingredients_container.gd" id="1_nq3xh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t1r27"]
+size = Vector3(1, 0.43, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nq3xh"]
+
+[node name="IngredientsContainer" type="StaticBody3D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_nq3xh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_t1r27")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nq3xh")
