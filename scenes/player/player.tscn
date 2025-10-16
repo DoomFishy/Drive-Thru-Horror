@@ -33,7 +33,6 @@ camera = NodePath("Camera3D")
 [node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
 target_position = Vector3(0, 0, -5)
 collision_mask = 14
-collide_with_areas = true
 
 [node name="ItemHolder" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42254293, -0.17254883, -0.55524206)
