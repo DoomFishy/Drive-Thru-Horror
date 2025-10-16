@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2d6wntghomxv"]
+
+[ext_resource type="Script" uid="uid://cmpjyv0wwq7ec" path="res://scenes/NCP/Scripts/EnemyBehaviour.gd" id="1_4w46t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_osmg8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4w46t"]
+
+[node name="TestDummy" type="StaticBody3D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_4w46t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_osmg8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4w46t")

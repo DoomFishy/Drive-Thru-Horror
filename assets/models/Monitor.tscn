@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmwwxu20706p4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5x03e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orc66"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gyjfv"]
+
+[node name="Monitor" type="Node3D"]
+
+[node name="MonitorScreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4739972, 0, 0, 0, -4.3711385e-08, -0.24886718, 0, 0.99999994, -1.0878329e-08, 0, 0, 0.010244012)
+mesh = SubResource("PlaneMesh_5x03e")
+surface_material_override/0 = SubResource("StandardMaterial3D_orc66")
+
+[node name="MonitorBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.52920055, 0, 0, 0, 0.02, 0, 0, 0)
+mesh = SubResource("BoxMesh_gyjfv")
