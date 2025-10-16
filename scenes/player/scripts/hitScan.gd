@@ -3,9 +3,9 @@ extends Camera3D
 var ray_Range = 2000
 
 func _input(event):
-	if event.is_action_pressed("Fire"):
-		Get_Camera_Collision()
-		
+		if event.is_action_pressed("Fire"):
+			Get_Camera_Collision()
+
 func Get_Camera_Collision():
 	var center = get_viewport().get_size()/2
 	
@@ -21,7 +21,7 @@ func Get_Camera_Collision():
 	
 	if aimRay:
 		var collider = aimRay["collider"]
-		print("Hit object:", collider.name, " Type:", collider.get_class(), " Script:", collider.get_script())
+		#print("Hit object:", collider.name, " Type:", collider.get_class(), " Script:", collider.get_script())
 		
 		if collider and collider.has_method("hit"):
 			collider.hit()
