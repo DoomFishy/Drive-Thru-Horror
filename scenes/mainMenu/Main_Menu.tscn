@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2yv7lmi07hfj"]
+[gd_scene load_steps=10 format=3 uid="uid://b2yv7lmi07hfj"]
 
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="1_xres6"]
+[ext_resource type="PackedScene" uid="uid://coef8d8g3xjex" path="res://scenes/cooking/stove.tscn" id="2_bh2hf"]
 [ext_resource type="Script" uid="uid://bbbjypkksgosg" path="res://scenes/mainMenu/Scripts/mainMenuScript.gd" id="2_e8eeb"]
+[ext_resource type="PackedScene" uid="uid://b364sm28y051l" path="res://scenes/cooking/patty.tscn" id="4_lbdhq"]
+[ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="5_lbdhq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a5hx"]
 
@@ -26,9 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 0.7875807, 0.6162115, 0, -0.6162115, 0.78758
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045814514, -0.35473633, -0.18376923)
+transform = Transform3D(1.011327, 0, 0, 0, 1.011327, 0, 0, 0, 1.011327, -4.063413, -0.43277377, -0.073251426)
 use_collision = true
-size = Vector3(39.45375, 0.29052734, 48.29338)
+collision_layer = 2
+size = Vector3(39.45375, 0.001, 48.29338)
 material = SubResource("StandardMaterial3D_8a5hx")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
@@ -67,6 +71,17 @@ text = "Option"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
+
+[node name="Stove" parent="." instance=ExtResource("2_bh2hf")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.5385134, -9.536743e-07, -1.1814001)
+
+[node name="Player" parent="." instance=ExtResource("5_lbdhq")]
+transform = Transform3D(1.005, 0, 0, 0, 1.005, 0, 0, 0, 1.005, -1.69678, 0.5524372, 1.5079365)
+collision_mask = 6
+
+[node name="Patty" parent="." instance=ExtResource("4_lbdhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66397524, -0.13808125, 0.40929917)
+collision_mask = 3
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Option" to="VBoxContainer" method="_on_option_pressed"]
