@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt0hn2cgtf5g1"]
+[gd_scene load_steps=9 format=3 uid="uid://dt0hn2cgtf5g1"]
 
 [ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/scripts/player.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/scripts/head.gd" id="2_dovo2"]
@@ -8,12 +8,6 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x7p2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_lvxji"]
-flip_faces = true
-size = Vector2(5, 5)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvxji"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
 shader = ExtResource("3_lvxji")
@@ -57,11 +51,6 @@ camera = NodePath("Camera3D")
 [node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
 target_position = Vector3(0, 0, -5)
 collision_mask = 14
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5742756)
-mesh = SubResource("QuadMesh_lvxji")
-surface_material_override/0 = SubResource("ShaderMaterial_lvxji")
 
 [node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
 material = SubResource("ShaderMaterial_p47bc")
