@@ -1,0 +1,150 @@
+[gd_scene load_steps=16 format=3 uid="uid://4tqobfdwecr1"]
+
+[ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="2_fpdas"]
+[ext_resource type="Texture2D" uid="uid://qbem37reabs5" path="res://assets/models/building/5.png" id="9_xvo3l"]
+[ext_resource type="Texture2D" uid="uid://bj0x0vh3oymk7" path="res://assets/models/building/7.png" id="13_gnus1"]
+[ext_resource type="Texture2D" uid="uid://bt20jvi3ktfv3" path="res://assets/models/kitchen/assembly_machine_Metal031_1K-JPG_Color.jpg" id="14_edxlo"]
+[ext_resource type="Texture2D" uid="uid://ccmwp1q68gnqc" path="res://assets/models/building/4.png" id="14_jr446"]
+[ext_resource type="Texture2D" uid="uid://nj72wcdluipk" path="res://assets/models/kitchen/assembly_machine_Metal029_1K-JPG_Color.jpg" id="15_gnus1"]
+[ext_resource type="PackedScene" uid="uid://cifi8iv21obrs" path="res://assets/models/Car.glb" id="17_qo8tj"]
+[ext_resource type="PackedScene" uid="uid://df0mspp5gq514" path="res://scenes/level_objects/window.tscn" id="18_ekwbd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_db2vl"]
+sky_top_color = Color(0.032619108, 0.08027861, 0.13110289, 1)
+sky_horizon_color = Color(0.037238546, 0.07042245, 0.116016515, 1)
+ground_bottom_color = Color(0.07822692, 0.061681993, 0.04306133, 1)
+ground_horizon_color = Color(0.0014555522, 0.0718329, 0.12550417, 1)
+
+[sub_resource type="Sky" id="Sky_05abr"]
+sky_material = SubResource("ProceduralSkyMaterial_db2vl")
+
+[sub_resource type="Environment" id="Environment_jawwy"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_05abr")
+ambient_light_source = 2
+ambient_light_color = Color(0.0768358, 0.07683582, 0.076835774, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gnus1"]
+size = Vector2(58.845, 5.995)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jr446"]
+albedo_texture = ExtResource("14_edxlo")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_edxlo"]
+size = Vector3(50.435, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo8tj"]
+albedo_texture = ExtResource("15_gnus1")
+uv1_triplanar = true
+
+[node name="Map" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_fpdas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41015482, 1.4285765, 3.3877742)
+visible = false
+speed = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jawwy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.32444572, 0.9459043, 0, -0.9459043, 0.32444572, 0, 1.9818738, 0)
+visible = false
+light_energy = 1.935
+shadow_enabled = true
+
+[node name="forest" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0454779)
+
+[node name="Sprite3D" type="Sprite3D" parent="forest"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 5.045968, 32.928925)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("9_xvo3l")
+
+[node name="Sprite3D2" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 5.045968, 32.928925)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("9_xvo3l")
+
+[node name="Sprite3D3" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.61264, 5.045968, 32.928925)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("9_xvo3l")
+
+[node name="Sprite3D10" type="Sprite3D" parent="forest"]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.748313, 15.438898)
+modulate = Color(0, 0.34279114, 0, 1)
+texture = ExtResource("13_gnus1")
+
+[node name="Sprite3D11" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 4.748313, 15.438898)
+modulate = Color(0, 0.34279114, 0, 1)
+texture = ExtResource("13_gnus1")
+
+[node name="Sprite3D12" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.61264, 4.695816, 15.535845)
+modulate = Color(0, 0.34279114, 0, 1)
+texture = ExtResource("13_gnus1")
+
+[node name="Sprite3D7" type="Sprite3D" parent="forest"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.9550829, 23.99788)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("14_jr446")
+
+[node name="Sprite3D9" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 18.144869, 1.9550829, 23.99788)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("14_jr446")
+
+[node name="Sprite3D4" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.886875, 5.045968, 32.928925)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("9_xvo3l")
+
+[node name="Sprite3D13" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.886875, 4.695816, 15.535845)
+modulate = Color(0, 0.34279114, 0, 1)
+texture = ExtResource("13_gnus1")
+
+[node name="Sprite3D14" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 37.419106, 1.9550829, 23.99788)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("14_jr446")
+
+[node name="Sprite3D5" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.013706, 5.045968, 32.928925)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("9_xvo3l")
+
+[node name="Sprite3D15" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.013706, 4.695816, 15.535845)
+modulate = Color(0, 0.34279114, 0, 1)
+texture = ExtResource("13_gnus1")
+
+[node name="Sprite3D16" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -37.481476, 1.9550829, 23.99788)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("14_jr446")
+
+[node name="Sprite3D8" type="Sprite3D" parent="forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 1.9550829, 23.99788)
+modulate = Color(0, 0.8229908, 0, 1)
+texture = ExtResource("14_jr446")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7663138, 11.826447)
+mesh = SubResource("PlaneMesh_gnus1")
+surface_material_override/0 = SubResource("StandardMaterial3D_jr446")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4039513, 14.31871)
+mesh = SubResource("BoxMesh_edxlo")
+surface_material_override/0 = SubResource("StandardMaterial3D_qo8tj")
+
+[node name="Car2" parent="." instance=ExtResource("17_qo8tj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.38413596, -0.6302813, 11.5627575)
+
+[node name="building" parent="." instance=ExtResource("18_ekwbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007297516, -0.09, 0.038246274)
