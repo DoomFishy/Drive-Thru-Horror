@@ -1,0 +1,73 @@
+{
+	"1": {
+		"text": "Hey... you got any grease scraps? I been hearin’ the fryer talkin’ again... whisperin’ my name.",
+		"options": [
+			{"text": "1. Are you high right now?", "next_id": 2},
+			{"text": "2. What do you mean 'talking'?", "next_id": 3},
+			{"text": "3. Stay away from me, man.", "next_id": 4},
+			{"text": "4. The fryer called your name?", "next_id": 5}
+		]
+	},
+
+	"2": {
+		"text": "Heh... not anymore. Ran out two nights ago. That’s when it started hummin’. It likes when I’m sober. Likes it *too much*.",
+		"options": [
+			{"text": "1. You need help.", "next_id": "end"},
+			{"text": "2. What does it want from you?", "next_id": 6}
+		]
+	},
+
+	"3": {
+		"text": "You never heard it? Sounds like a cat trapped in a blender... only it’s *laughin’.*",
+		"options": [
+			{"text": "1. That’s messed up.", "next_id": 6},
+			{"text": "2. I should check the fryer.", "next_id": 7}
+		]
+	},
+
+	"4": {
+		"text": "Yeah, that’s right. Walk away. Everyone walks away. But it don’t forget faces. Not *ever.*",
+		"options": [
+			{"text": "1. (Leave.)", "next_id": "end"}
+		]
+	},
+
+	"5": {
+		"text": "Mmm-hmm. Said it sweet, like syrup burnin’ in my ears. Said, ‘Rusty... you taste like tallow.’",
+		"options": [
+			{"text": "1. You need to sleep, man.", "next_id": "end"},
+			{"text": "2. What did it mean by that?", "next_id": 6}
+		]
+	},
+
+	"6": {
+		"text": "It wants meat. Real meat. The kind that *used to talk.* I seen it suck bones through the drain.",
+		"options": [
+			{"text": "1. I don’t believe you.", "next_id": "end"},
+			{"text": "2. Did you tell anyone?", "next_id": 8},
+			{"text": "3. How do I stop it?", "next_id": 9}
+		]
+	},
+
+	"7": {
+		"text": "Don’t look too close. It’ll blink. It always blinks first.",
+		"options": [
+			{"text": "1. (Leave.)", "next_id": "end"}
+		]
+	},
+
+	"8": {
+		"text": "Told the manager once. Next day he was gone. Fryer was bubblin’ red for hours.",
+		"options": [
+			{"text": "1. That’s impossible.", "next_id": "end"},
+			{"text": "2. You’re telling the truth, aren’t you?", "next_id": 9}
+		]
+	},
+
+	"9": {
+		"text": "Tried feedin’ it salt once. Screamed like boilin’ blood. So yeah... salt hurts it. That’s all I got left.",
+		"options": [
+			{"text": "1. Salt... got it.", "next_id": "end"}
+		]
+	}
+}

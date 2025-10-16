@@ -1,0 +1,57 @@
+{
+	"1": {
+		"text": "Uh... hey. You work here, right? I came by last night to grab fries and... something was wrong.",
+		"options": [
+			{"text": "1. What do you mean 'wrong'?", "next_id": 2},
+			{"text": "2. You sure you weren’t drunk?", "next_id": 3},
+			{"text": "3. Go home, kid.", "next_id": "end"}
+		]
+	},
+
+	"2": {
+		"text": "The intercom. It laughed. I thought it was you guys messin’ with me, but... it said my name.",
+		"options": [
+			{"text": "1. How could it know your name?", "next_id": 4},
+			{"text": "2. You probably imagined it.", "next_id": 5}
+		]
+	},
+
+	"3": {
+		"text": "No! I swear, I was stone-cold sober. The screen flashed ‘ORDER TAKEN’ before I said anything.",
+		"options": [
+			{"text": "1. What did it say after?", "next_id": 4},
+			{"text": "2. Sounds like a glitch.", "next_id": "end"}
+		]
+	},
+
+	"4": {
+		"text": "It said... ‘You’ve already eaten.’ Then the speaker hissed, like... breathing. I just drove off.",
+		"options": [
+			{"text": "1. Did you tell anyone?", "next_id": 6},
+			{"text": "2. You’re pale, sit down.", "next_id": "end"}
+		]
+	},
+
+	"5": {
+		"text": "Yeah... maybe. Finals week’s gettin’ to me. I barely sleep. Maybe I just... heard myself.",
+		"options": [
+			{"text": "1. Go get some rest.", "next_id": "end"},
+			{"text": "2. Or maybe it *heard* you first.", "next_id": 7}
+		]
+	},
+
+	"6": {
+		"text": "Tried. Police laughed. Said maybe I mixed up voices. But it wasn’t a voice—it was a *mouth.*",
+		"options": [
+			{"text": "1. That’s enough, kid.", "next_id": "end"},
+			{"text": "2. What do you mean 'mouth'?", "next_id": 7}
+		]
+	},
+
+	"7": {
+		"text": "Just... don’t lean too close to the speaker. I think it listens harder when you breathe in.",
+		"options": [
+			{"text": "1. (Back away.)", "next_id": "end"}
+		]
+	}
+}

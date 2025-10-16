@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="1_1mgh8"]
 [ext_resource type="Texture2D" uid="uid://dqaehttexexqh" path="res://assets/prototype/Dark/texture_01.png" id="2_0huwb"]
 [ext_resource type="PackedScene" uid="uid://ifllmt2qup1j" path="res://scenes/dummy_items/dummy_item.tscn" id="3_0huwb"]
+[ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/commerical_flat_top.glb" id="4_uyg78"]
+[ext_resource type="PackedScene" uid="uid://5n7lpw4ddelv" path="res://dialogue/dialogue_trigger.tscn" id="5_a8c4q"]
+[ext_resource type="PackedScene" uid="uid://bmg6cd62cxe18" path="res://dialogue/dialogue_ui.tscn" id="6_d4tmt"]
 [ext_resource type="PackedScene" uid="uid://cm8xk0xtcbgyx" path="res://assets/models/Shotgun.tscn" id="4_7c366"]
 [ext_resource type="PackedScene" uid="uid://d0ji4n4enn3k5" path="res://assets/models/commerical_flat_top.glb" id="4_eulud"]
 [ext_resource type="PackedScene" uid="uid://bg23q66011yne" path="res://assets/models/button.tscn" id="4_ho4vq"]
@@ -58,6 +61,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20424843, 0.7905276, -0.324
 [node name="DummyItem" parent="." instance=ExtResource("3_0huwb")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.53334, -0.059472173, -5.4248867)
 
+[node name="commerical_flat_top" parent="." instance=ExtResource("4_uyg78")]
+transform = Transform3D(-0.39999732, 0, -0.0014590835, 0, 0.4, 0, 0.0014590835, 0, -0.39999732, 7.657138, 0.5639405, -2.612648)
+
+[node name="dialogue_trigger2" parent="." node_paths=PackedStringArray("npc") instance=ExtResource("5_a8c4q")]
+transform = Transform3D(3.26, 0, 0, 0, 3.26, 0, 0, 0, 3.26, 7.383799, 1.0376003, -2.5920475)
+dialogue_file_path = "res://dialogue/content/npc_mother.json"
+npc = NodePath("../commerical_flat_top")
+npc_display_name = "Mother"
+
+[node name="dialogue_ui" parent="." instance=ExtResource("6_d4tmt")]
 [node name="Button" parent="." instance=ExtResource("4_ho4vq")]
 transform = Transform3D(0.4, 0, 0, 0, 0.5, 0, 0, 0, 0.4, -0.9689734, 0.98607755, -3.8934588)
 script = ExtResource("5_dubqp")

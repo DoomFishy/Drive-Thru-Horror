@@ -1,0 +1,65 @@
+{
+	"1": {
+		"text": "Oh, sweetheart... you look so tired. Working all night again? You should really take better care of yourself.",
+		"options": [
+			{"text": "1. Do I know you?", "next_id": 2},
+			{"text": "2. You sound like my mom.", "next_id": 3},
+			{"text": "3. Please just order something.", "next_id": "end"}
+		]
+	},
+
+	"2": {
+		"text": "Oh, honey, you always say that. But I’ve been looking after you since you were *this* tall.",
+		"options": [
+			{"text": "1. You must be mistaken.", "next_id": 4},
+			{"text": "2. What do you mean by that?", "next_id": 5}
+		]
+	},
+
+	"3": {
+		"text": "Well, maybe that’s because I am. Or was. It’s hard to remember, isn’t it? Nights blur together.",
+		"options": [
+			{"text": "1. Stop joking around.", "next_id": 4},
+			{"text": "2. You’re scaring me.", "next_id": 6}
+		]
+	},
+
+	"4": {
+		"text": "Mistaken? Oh no, dear. I’ve seen every one of your shifts. Every time you burn the fries. Every time you *sigh* when no one’s looking.",
+		"options": [
+			{"text": "1. How do you know that?", "next_id": 5},
+			{"text": "2. You need to leave.", "next_id": "end"}
+		]
+	},
+
+	"5": {
+		"text": "Mothers just know. Even when their children try to forget them. Even when their faces start to change.",
+		"options": [
+			{"text": "1. What are you talking about?", "next_id": 7},
+			{"text": "2. This isn’t funny anymore.", "next_id": 6}
+		]
+	},
+
+	"6": {
+		"text": "Funny? Oh, sweetheart... I’m just happy you’re still alive. Not everyone in here stays that way.",
+		"options": [
+			{"text": "1. What do you mean?", "next_id": 7},
+			{"text": "2. Please leave.", "next_id": "end"}
+		]
+	},
+
+	"7": {
+		"text": "You’ll see soon enough. The smell of oil and blood lingers for a reason. But don’t worry, Mommy will keep you safe. Like always.",
+		"options": [
+			{"text": "1. I don’t think you’re real.", "next_id": 8},
+			{"text": "2. Stay back.", "next_id": 8}
+		]
+	},
+
+	"8": {
+		"text": "Real enough to tuck you in. Real enough to watch you sleep between shifts. Real enough to love you—forever.",
+		"options": [
+			{"text": "1. (Stay silent.)", "next_id": "end"}
+		]
+	}
+}
