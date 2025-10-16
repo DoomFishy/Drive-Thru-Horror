@@ -1,0 +1,90 @@
+{
+	"1": {
+		"text": "Heeey, rookie! Welcome to the grease pit. Hope you brought your sense of humor — 'cause you’re gonna need it.",
+		"options": [
+			{"text": "1. What do you mean?", "next_id": 2},
+			{"text": "2. Nice to meet you, Mikey.", "next_id": 3},
+			{"text": "3. Smells... awful in here.", "next_id": 4},
+			{"text": "4. You look like you haven’t slept.", "next_id": 5}
+		]
+	},
+
+	"2": {
+		"text": "This place eats people alive, man. Not, like, *literally* — ha! Unless... well, maybe.",
+		"options": [
+			{"text": "1. What’s that supposed to mean?", "next_id": 6},
+			{"text": "2. You’re joking, right?", "next_id": 3}
+		]
+	},
+
+	"3": {
+		"text": "Yeah, yeah, 'nice to meet you' — that’s what Gary said too. Before the fryer started humming his name.",
+		"options": [
+			{"text": "1. Who’s Gary?", "next_id": 7},
+			{"text": "2. You’re not serious.", "next_id": 8}
+		]
+	},
+
+	"4": {
+		"text": "Ha! That’s the *scent of profit*, my friend. Grease, fear, and despair — all cooked to perfection.",
+		"options": [
+			{"text": "1. You really love this job, huh?", "next_id": 9},
+			{"text": "2. I think I’m gonna be sick.", "next_id": "end"}
+		]
+	},
+
+	"5": {
+		"text": "Sleep? Nah. Every time I close my eyes, I hear the fryer bubbling... like it’s breathing. You ever heard oil breathe?",
+		"options": [
+			{"text": "1. No... should I be worried?", "next_id": 6},
+			{"text": "2. You need a vacation.", "next_id": "end"}
+		]
+	},
+
+	"6": {
+		"text": "Worried? Nah! Terrified? Maybe! But don’t tell Gristle I said that — he thinks laughter keeps the grease calm.",
+		"options": [
+			{"text": "1. The manager said the same thing about staying quiet.", "next_id": 10},
+			{"text": "2. You both sound insane.", "next_id": "end"}
+		]
+	},
+
+	"7": {
+		"text": "Gary used to clean the filters. One night he said the oil looked like it had eyes. Next shift, the oil was thicker. Redder.",
+		"options": [
+			{"text": "1. What happened to him?", "next_id": 11},
+			{"text": "2. That’s just a rumor, right?", "next_id": 8}
+		]
+	},
+
+	"8": {
+		"text": "Yeah, yeah, I’m just kidding! Hahaha... ha... why aren’t you laughing?",
+		"options": [
+			{"text": "1. Because that wasn’t funny.", "next_id": 6},
+			{"text": "2. Sorry, I’m just tired.", "next_id": "end"}
+		]
+	},
+
+	"9": {
+		"text": "Love it? Nah. But if I keep laughing, maybe it won’t notice me. Maybe it only likes the quiet ones.",
+		"options": [
+			{"text": "1. That’s not funny, Mikey.", "next_id": 6},
+			{"text": "2. What do you mean 'it'?", "next_id": 10}
+		]
+	},
+
+	"10": {
+		"text": "You’ll see. Everyone does. Just don’t stop laughing when the oil starts moving. It likes the sound.",
+		"options": [
+			{"text": "1. (Step away slowly.)", "next_id": "end"},
+			{"text": "2. Mikey... what’s in the fryer?", "next_id": 11}
+		]
+	},
+
+	"11": {
+		"text": "Don’t ask that. It listens. It *always* listens. Just... keep flipping burgers, rookie.",
+		"options": [
+			{"text": "1. ...Okay.", "next_id": "end"}
+		]
+	}
+}

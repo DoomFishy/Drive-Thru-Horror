@@ -1,0 +1,106 @@
+{
+	"1": {
+		"text": "Hey there, sport! You’re still workin’ nights, huh? I’ve been comin’ here for years—same order, same smile. You remember me, right?",
+		"options": [
+			{"text": "1. Sorry, can’t say I do.", "next_id": 2},
+			{"text": "2. Yeah, I think so.", "next_id": 3},
+			{"text": "3. You come here a lot?", "next_id": 4},
+			{"text": "4. Please order or move along.", "next_id": "end"}
+		]
+	},
+
+	"2": {
+		"text": "Ah, everyone says that at first. But you will. Folks around here always remember me eventually.",
+		"options": [
+			{"text": "1. What’s your name again?", "next_id": 5},
+			{"text": "2. That’s... unsettling.", "next_id": 6}
+		]
+	},
+
+	"3": {
+		"text": "Ha! I knew it! You never forget a face like mine. Or was it the other way around?",
+		"options": [
+			{"text": "1. What do you mean by that?", "next_id": 6},
+			{"text": "2. You feeling alright?", "next_id": 7}
+		]
+	},
+
+	"4": {
+		"text": "Every night for a long, long time. Can’t beat your fries. They taste... nostalgic, like I’ve had them before. Over and over.",
+		"options": [
+			{"text": "1. You probably just like them a lot.", "next_id": 7},
+			{"text": "2. Over and over?", "next_id": 8}
+		]
+	},
+
+	"5": {
+		"text": "My name? Huh. Funny thing—nobody ever asks me that anymore. Guess it’s been a while since I needed one.",
+		"options": [
+			{"text": "1. What do you mean?", "next_id": 8},
+			{"text": "2. You’re creeping me out, man.", "next_id": 6}
+		]
+	},
+
+	"6": {
+		"text": "Creepy? Nah, I’m just friendly. Everyone in this town’s so jumpy lately. Like they’ve all got somethin’ to hide.",
+		"options": [
+			{"text": "1. Maybe they do.", "next_id": 9},
+			{"text": "2. You should go home, sir.", "next_id": "end"}
+		]
+	},
+
+	"7": {
+		"text": "Yeah... maybe. Guess I’m just tired. Been comin’ here since I was a kid. Place used to have a clown mascot. Remember him?",
+		"options": [
+			{"text": "1. We haven’t had a mascot in years.", "next_id": 10},
+			{"text": "2. Yeah... I remember that thing.", "next_id": 11}
+		]
+	},
+
+	"8": {
+		"text": "It’s weird, ain’t it? Every night feels the same. I pull up, order, wait, and someone new’s wearin’ your face.",
+		"options": [
+			{"text": "1. What are you talking about?", "next_id": 11},
+			{"text": "2. I think you should leave.", "next_id": "end"}
+		]
+	},
+
+	"9": {
+		"text": "Heh. Yeah. Maybe I do too. Maybe we all come here to forget what we were hungry for in the first place.",
+		"options": [
+			{"text": "1. You sound like you’ve lost something.", "next_id": 12},
+			{"text": "2. I’m closing up soon.", "next_id": "end"}
+		]
+	},
+
+	"10": {
+		"text": "Then who’s been waving at me from behind the counter after hours?",
+		"options": [
+			{"text": "1. No one’s here after close.", "next_id": 11},
+			{"text": "2. I... don’t know.", "next_id": 13}
+		]
+	},
+
+	"11": {
+		"text": "Good. Then I’m not crazy. You’ve seen him too—the one with the grin that doesn’t move.",
+		"options": [
+			{"text": "1. Stop talking.", "next_id": "end"},
+			{"text": "2. What does he want?", "next_id": 13}
+		]
+	},
+
+	"12": {
+		"text": "Lost somethin’? Nah. I just keep findin’ the same meal. The same faces. The same screams on the fryer oil. It’s all comfortin’, in a way.",
+		"options": [
+			{"text": "1. I think you should leave.", "next_id": "end"},
+			{"text": "2. You’re not supposed to be here, are you?", "next_id": 13}
+		]
+	},
+
+	"13": {
+		"text": "Heh... neither are you.",
+		"options": [
+			{"text": "1. (Stay silent.)", "next_id": "end"}
+		]
+	}
+}

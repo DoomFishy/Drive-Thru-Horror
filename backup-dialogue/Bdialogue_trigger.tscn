@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b42y36c6hpor1"]
+
+[ext_resource type="Script" uid="uid://lb01m2apb6lt" path="res://backup-dialogue/Bdialogue_trigger.gd" id="1_5lhbf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_umwm6"]
+
+[node name="dialogue_trigger" type="Node3D"]
+script = ExtResource("1_5lhbf")
+dialogues = Array[String](["Do you happen to have any crack on you?", "Sorry, my bad. It's just an old habits of mine", "So, I want a number 9 large, with coke"])
+npc_names = Array[String](["Homeless Guy (Crack Hungery Mode)", "Homeless Guy (Normal)", "Homeless Guy (Normal)"])
+
+[node name="trigger" type="Area3D" parent="."]
+
+[node name="collision" type="CollisionShape3D" parent="trigger"]
+shape = SubResource("BoxShape3D_umwm6")
+
+[connection signal="body_entered" from="trigger" to="." method="start_dialogue"]

@@ -1,0 +1,130 @@
+{
+	"1": {
+		"text": "Evenin’, kid. Don’t see many folks workin’ this late without a badge. You keepin’ outta trouble?",
+		"options": [
+			{"text": "1. Depends. You on duty or just hangin’ around again?", "next_id": 2},
+			{"text": "2. You heard about the missing people?", "next_id": 3},
+			{"text": "3. Need me to make you somethin’? You look tired.", "next_id": 4},
+			{"text": "4. You still even a cop, Burke?", "next_id": 5}
+		]
+	},
+
+	"2": {
+		"text": "Always on duty. Can’t clock out when the whole town’s rottin’ from the inside. Someone’s gotta keep watch.",
+		"options": [
+			{"text": "1. Watchin’ who?", "next_id": 6},
+			{"text": "2. That’s kinda creepy, man.", "next_id": 7}
+		]
+	},
+
+	"3": {
+		"text": "Yeah... bodies show up without faces. Reports vanish. No prints, no evidence. Just meat that don’t belong to anyone anymore.",
+		"options": [
+			{"text": "1. That’s sick.", "next_id": 8},
+			{"text": "2. You think it’s the monster?", "next_id": 9}
+		]
+	},
+
+	"4": {
+		"text": "Appreciate it, kid. Coffee. Black. Same as always. Gotta stay sharp. It don’t like caffeine, y’know.",
+		"options": [
+			{"text": "1. What doesn’t like caffeine?", "next_id": 10},
+			{"text": "2. You sound paranoid, Burke.", "next_id": 7}
+		]
+	},
+
+	"5": {
+		"text": "Badge don’t mean much anymore. Town forgot who protects it. But I still remember... every face that went missin’.",
+		"options": [
+			{"text": "1. You remember too much, maybe.", "next_id": 7},
+			{"text": "2. You ever find any of them?", "next_id": 11}
+		]
+	},
+
+	"6": {
+		"text": "Whoever’s left. Folks don’t talk at night anymore. Streets go quiet... and somethin’ else starts talkin’.",
+		"options": [
+			{"text": "1. You mean the monster?", "next_id": 9},
+			{"text": "2. What do you hear exactly?", "next_id": 12}
+		]
+	},
+
+	"7": {
+		"text": "You call it creepy. I call it awareness. Folks disappear when they stop payin’ attention.",
+		"options": [
+			{"text": "1. You’re scarin’ me.", "next_id": "end"},
+			{"text": "2. Maybe that’s the point.", "next_id": "end"}
+		]
+	},
+
+	"8": {
+		"text": "Sick? Yeah. World’s been sick for years. Some of us just stopped pretendin’ it ain’t terminal.",
+		"options": [
+			{"text": "1. That’s bleak.", "next_id": "end"},
+			{"text": "2. You sound like you’ve seen it.", "next_id": 9}
+		]
+	},
+
+	"9": {
+		"text": "Monster? Heh. Depends who you ask. Every witness described a human. Every camera showed somethin’ else.",
+		"options": [
+			{"text": "1. What did *you* see?", "next_id": 13},
+			{"text": "2. So you’re sayin’ it could be anyone.", "next_id": 14}
+		]
+	},
+
+	"10": {
+		"text": "It listens. Hates noise. Loves silence. Loves fear even more. That’s how it picks who’s next.",
+		"options": [
+			{"text": "1. You’ve seen it, haven’t you?", "next_id": 13},
+			{"text": "2. Maybe you’re just tired.", "next_id": "end"}
+		]
+	},
+
+	"11": {
+		"text": "Found pieces. Found tracks that led back here. But nothin’ ever leads away.",
+		"options": [
+			{"text": "1. Back here? You mean the drive-thru?", "next_id": 15},
+			{"text": "2. You’re losin’ it, Burke.", "next_id": "end"}
+		]
+	},
+
+	"12": {
+		"text": "Static. Like a police radio with a heartbeat. Sometimes it says my name, but it ain’t my voice.",
+		"options": [
+			{"text": "1. That’s not possible.", "next_id": "end"},
+			{"text": "2. What does it want from you?", "next_id": 16}
+		]
+	},
+
+	"13": {
+		"text": "All I’ll say is... it wore a smile wrong. Like it practiced in a mirror and never got it right.",
+		"options": [
+			{"text": "1. That’s... awful.", "next_id": "end"},
+			{"text": "2. Are you sure it wasn’t human?", "next_id": 14}
+		]
+	},
+
+	"14": {
+		"text": "Anyone. Everyone. Maybe even me. Don’t stay too long out here, kid.",
+		"options": [
+			{"text": "1. ...Goodnight, officer.", "next_id": "end"}
+		]
+	},
+
+	"15": {
+		"text": "You think those fryers just hiss when oil’s hot? I’ve heard ‘em whisper. ‘Serve him next.’",
+		"options": [
+			{"text": "1. You need to rest, Burke.", "next_id": "end"},
+			{"text": "2. Serve *who* next?", "next_id": 16}
+		]
+	},
+
+	"16": {
+		"text": "Whatever’s hungry. Whatever’s still waitin’. You feel it too, don’t you? Behind the window.",
+		"options": [
+			{"text": "1. (Stay silent.)", "next_id": "end"},
+			{"text": "2. ...Yeah.", "next_id": "end"}
+		]
+	}
+}
