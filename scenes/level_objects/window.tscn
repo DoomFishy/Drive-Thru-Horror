@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://df0mspp5gq514"]
+[gd_scene load_steps=44 format=3 uid="uid://df0mspp5gq514"]
 
 [ext_resource type="PackedScene" uid="uid://d1ft2aq5jwf48" path="res://assets/models/building/wall.glb" id="1_exsec"]
 [ext_resource type="PackedScene" uid="uid://wi08u1lojhiw" path="res://assets/models/building/floor.glb" id="1_gk3xu"]
@@ -12,6 +12,86 @@
 [ext_resource type="PackedScene" uid="uid://byv0gnrulgkkk" path="res://assets/models/kitchen/flat_top_vent.glb" id="10_82nkc"]
 [ext_resource type="PackedScene" uid="uid://ba1sgxh6dw0m3" path="res://assets/models/kitchen/fridge.glb" id="11_dxsxa"]
 [ext_resource type="PackedScene" uid="uid://o3i786s7plav" path="res://assets/models/kitchen/assembly_machine.glb" id="12_ydpt4"]
+[ext_resource type="PackedScene" uid="uid://mda7h5q1uxl1" path="res://scenes/assembly_system/ingredients_container.tscn" id="13_ownc5"]
+[ext_resource type="PackedScene" uid="uid://bvbnxnus21m8j" path="res://scenes/assembly_system/ingredients/ingredient_onion.tscn" id="14_j3kah"]
+[ext_resource type="Texture2D" uid="uid://diegkx2v2vqqq" path="res://assets/models/ingredients/onion_onion.png" id="15_fdmww"]
+[ext_resource type="PackedScene" uid="uid://p4m0wthqe1pm" path="res://scenes/assembly_system/ingredients/ingredient_tomato.tscn" id="15_t1k6h"]
+[ext_resource type="PackedScene" uid="uid://dvjrxssm1ejch" path="res://scenes/assembly_system/ingredients/ingredient_lettuce.tscn" id="16_fdmww"]
+[ext_resource type="Texture2D" uid="uid://sc25u840bt5u" path="res://assets/models/ingredients/tomato_pngtree-tomato-fruit-slice-png-image_10127690-3059477561.png" id="17_fdmww"]
+[ext_resource type="PackedScene" uid="uid://dv0k5kwyl7xh7" path="res://scenes/assembly_system/ingredients/ingredient_top_bun.tscn" id="17_u1lbb"]
+[ext_resource type="PackedScene" uid="uid://beicbyn5cy1e0" path="res://scenes/assembly_system/ingredients/ingredient_bottom_bun.tscn" id="18_3uqws"]
+[ext_resource type="Texture2D" uid="uid://blyyd1xblbp0b" path="res://assets/models/ingredients/lettuce_1000_F_111496362_zI8piJoKqAsu0MZvgtnZ8DlhJMpGJoE9-3101628760.jpg" id="19_u1lbb"]
+[ext_resource type="Texture2D" uid="uid://bl4aungcvkwss" path="res://assets/models/ingredients/bun_bot_good-sandwich-picture-id835407256-334733374.jpg" id="21_rr0co"]
+[ext_resource type="Texture2D" uid="uid://cfxq1jdjuwvqr" path="res://assets/models/ingredients/bun_top_good-sandwich-picture-id835407256-334733374.jpg" id="23_apkel"]
+
+[sub_resource type="Animation" id="Animation_gk3xu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall/Cube_005:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wall/Cube_005:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wall/Cube_005:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.81460464, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wall/Cube_003:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wall/Cube_003:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wall/Cube_003:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.2343649, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_50oq2"]
 resource_name = "window_open"
@@ -84,75 +164,6 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
-[sub_resource type="Animation" id="Animation_gk3xu"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("wall/Cube_005:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("wall/Cube_005:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("wall/Cube_005:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.81460464, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("wall/Cube_003:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("wall/Cube_003:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("wall/Cube_003:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.2343649, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_237f5"]
 _data = {
 &"RESET": SubResource("Animation_gk3xu"),
@@ -202,16 +213,31 @@ data = PackedVector3Array(-0.5, -0.5, 4.4444275, -0.5, -0.5, -4.4444275, -0.5, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ao65r"]
 data = PackedVector3Array(-0.5, -0.5, 2.4377441, -0.5, -0.5, -2.4377441, -0.5, 0.5, -2.4377441, 0.5, -0.5, -2.4377441, -0.5, -0.5, -2.4377441, -0.5, -0.5, 2.4377441, -0.5, 0.5, -2.4377441, -0.5, -0.5, -2.4377441, 0.5, -0.5, -2.4377441, -0.5, 0.5, -2.4377441, -0.5, 0.5, 2.4377441, -0.5, -0.5, 2.4377441, -0.5, -0.5, 2.4377441, -0.5, 0.5, 2.4377441, 0.5, 0.5, 2.4377441, 0.5, 0.5, 2.4377441, -0.5, 0.5, 2.4377441, -0.5, 0.5, -2.4377441, -0.5, -0.5, 2.4377441, 0.5, -0.5, 2.4377441, 0.5, -0.5, -2.4377441, 0.5, 0.5, 2.4377441, 0.5, -0.5, 2.4377441, -0.5, -0.5, 2.4377441, 0.5, -0.5, -2.4377441, 0.5, -0.5, 2.4377441, 0.5, 0.5, 2.4377441, 0.5, -0.5, -2.4377441, 0.5, 0.5, -2.4377441, -0.5, 0.5, -2.4377441, -0.5, 0.5, -2.4377441, 0.5, 0.5, -2.4377441, 0.5, 0.5, 2.4377441, 0.5, 0.5, 2.4377441, 0.5, 0.5, -2.4377441, 0.5, -0.5, -2.4377441)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1lbb"]
+albedo_texture = ExtResource("15_fdmww")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3uqws"]
+albedo_texture = ExtResource("17_fdmww")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr0co"]
+albedo_texture = ExtResource("19_u1lbb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a1b8"]
+albedo_texture = ExtResource("21_rr0co")
+uv1_scale = Vector3(0.775, 0.775, 0.775)
+uv1_offset = Vector3(0.37, 0.095, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq8qh"]
+albedo_texture = ExtResource("23_apkel")
+uv1_scale = Vector3(0.83, 0.83, 0.83)
+uv1_offset = Vector3(-0.17, 0.17, 0)
+
 [node name="building" type="Node3D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_237f5")
 }
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(6.4702215, 3.1966192e-07, 4.2489134e-07, 9.769764e-07, -2.1170251, 0, 5.656447e-07, 2.7945731e-14, -4.8601904, -0.79649484, -0.3669273, 1.456684)
-collision_layer = 2
 
 [node name="floor" parent="." instance=ExtResource("1_gk3xu")]
 transform = Transform3D(6.360007e-08, 9.603344e-15, -1.455, 2.196989e-07, -1.455, 0, -1.455, -2.196989e-07, -6.360007e-08, 0.84519386, -0.009792805, 3.3557982)
@@ -283,21 +309,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68847656, 1.3695679, 7.199
 shape = SubResource("BoxShape3D_gk3xu")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-visible = false
 transparency = 1.0
 use_collision = true
 collision_layer = 2
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6812458, 2.0725098, 2.298603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6812458, 2.3231888, 2.298603)
 transparency = 1.0
 use_collision = true
 collision_layer = 2
 flip_faces = true
-size = Vector3(9.0290985, 5.1450195, 11.210197)
+size = Vector3(9.0290985, 4.6436615, 11.210197)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.733964, 2.0725098, -0.3000629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6069822, 2.0725098, -0.3000629)
 transparency = 1.0
 operation = 2
 collision_layer = 2
@@ -305,7 +330,7 @@ flip_faces = true
 size = Vector3(2.0534897, 5.1450195, 6.4171104)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.2294292, 2.0725098, 6.9216146)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0767791, 2.0725098, 6.759631)
 transparency = 1.0
 operation = 2
 collision_layer = 2
@@ -375,9 +400,10 @@ transform = Transform3D(-0.2, 0, 1.7484556e-08, 0, 0.2, 0, -1.7484556e-08, 0, -0
 transform = Transform3D(-8.742278e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.742278e-09, 1.5984187, 1.2085459, -2.8342075)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="kitchen"]
+collision_layer = 2
 
 [node name="CSGBakedCollisionShape3D4" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4835446, 0.26035035, 5.331749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4306006, 0.29803646, 5.331749)
 shape = SubResource("ConcavePolygonShape3D_82nkc")
 
 [node name="CSGBakedCollisionShape3D3" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
@@ -385,14 +411,63 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.50
 shape = SubResource("ConcavePolygonShape3D_ttwuq")
 
 [node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.783992, 0.26035035, 1.0871887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.783992, 0.31037414, 1.0871887)
 shape = SubResource("ConcavePolygonShape3D_ownc5")
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2300993, 0.26035035, -0.40795898)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2300993, 0.3151037, -0.40795898)
 shape = SubResource("ConcavePolygonShape3D_ao65r")
+
+[node name="IngredientsContainer" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, 1.653552)
+
+[node name="IngredientsContainer2" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, 0.8304689)
+ingredient = ExtResource("14_j3kah")
+
+[node name="Cube" parent="IngredientsContainer2/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_u1lbb")
+
+[node name="IngredientsContainer3" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, 0.08492452)
+ingredient = ExtResource("15_t1k6h")
+
+[node name="Cube" parent="IngredientsContainer3/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_3uqws")
+
+[node name="IngredientsContainer4" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, -0.7836263)
+ingredient = ExtResource("16_fdmww")
+
+[node name="Cube" parent="IngredientsContainer4/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_rr0co")
+
+[node name="IngredientsContainer5" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, -1.6154937)
+ingredient = ExtResource("17_u1lbb")
+
+[node name="Cube" parent="IngredientsContainer5/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_0a1b8")
+
+[node name="IngredientsContainer6" parent="." instance=ExtResource("13_ownc5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.1178501, 0.9103501, -2.4170365)
+ingredient = ExtResource("18_3uqws")
+
+[node name="Cube" parent="IngredientsContainer6/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_bq8qh")
 
 [connection signal="body_entered" from="window_area" to="window_area" method="_on_body_entered"]
 [connection signal="body_exited" from="window_area" to="window_area" method="_on_body_exited"]
 
+[editable path="floor"]
 [editable path="wall"]
+[editable path="IngredientsContainer2"]
+[editable path="IngredientsContainer2/food_container"]
+[editable path="IngredientsContainer3"]
+[editable path="IngredientsContainer3/food_container"]
+[editable path="IngredientsContainer4"]
+[editable path="IngredientsContainer4/food_container"]
+[editable path="IngredientsContainer5"]
+[editable path="IngredientsContainer5/food_container"]
+[editable path="IngredientsContainer6"]
+[editable path="IngredientsContainer6/food_container"]

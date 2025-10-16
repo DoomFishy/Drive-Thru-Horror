@@ -42,8 +42,7 @@ uv1_triplanar = true
 [node name="Map" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fpdas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41015482, 1.4285765, 3.3877742)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41015482, 1.3560554, 3.3877742)
 speed = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -62,76 +61,91 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0454779)
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 5.045968, 32.928925)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("9_xvo3l")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D2" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 5.045968, 32.928925)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("9_xvo3l")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D3" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.61264, 5.045968, 32.928925)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("9_xvo3l")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D10" type="Sprite3D" parent="forest"]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.748313, 15.438898)
 modulate = Color(0, 0.34279114, 0, 1)
 texture = ExtResource("13_gnus1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D11" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 4.748313, 15.438898)
 modulate = Color(0, 0.34279114, 0, 1)
 texture = ExtResource("13_gnus1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D12" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.61264, 4.695816, 15.535845)
 modulate = Color(0, 0.34279114, 0, 1)
 texture = ExtResource("13_gnus1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D7" type="Sprite3D" parent="forest"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.9550829, 23.99788)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D9" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 18.144869, 1.9550829, 23.99788)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D4" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.886875, 5.045968, 32.928925)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("9_xvo3l")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D13" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.886875, 4.695816, 15.535845)
 modulate = Color(0, 0.34279114, 0, 1)
 texture = ExtResource("13_gnus1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D14" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 37.419106, 1.9550829, 23.99788)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D5" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.013706, 5.045968, 32.928925)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("9_xvo3l")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D15" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.013706, 4.695816, 15.535845)
 modulate = Color(0, 0.34279114, 0, 1)
 texture = ExtResource("13_gnus1")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D16" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -37.481476, 1.9550829, 23.99788)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
+metadata/_edit_lock_ = true
 
 [node name="Sprite3D8" type="Sprite3D" parent="forest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 1.9550829, 23.99788)
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7663138, 11.826447)
