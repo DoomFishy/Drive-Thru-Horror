@@ -1,9 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2d6wntghomxv"]
-
-[ext_resource type="Script" uid="uid://cmpjyv0wwq7ec" path="res://scenes/NCP/Scripts/EnemyBehaviour.gd" id="1_4w46t"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4w46t"]
-size = Vector3(3.6245728, 2.682129, 2.9803467)
+[gd_scene load_steps=12 format=3 uid="uid://ndk4eittuata"]
 
 [sub_resource type="Gradient" id="Gradient_7lelg"]
 offsets = PackedFloat32Array(0, 0.490909, 1)
@@ -21,7 +16,7 @@ curve = SubResource("Curve_b66j4")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j2jdl"]
 emission_shape = 1
-emission_sphere_radius = 3.0
+emission_sphere_radius = 1.0
 direction = Vector3(0, -1, 0)
 spread = 90.0
 initial_velocity_min = 4.0
@@ -40,15 +35,15 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_7lelg")
 
 [sub_resource type="Gradient" id="Gradient_t06nr"]
-offsets = PackedFloat32Array(0, 0.490909, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.490909, 0.5566038, 1)
+colors = PackedColorArray(0.145098, 0.145098, 0.145098, 0.52549, 0.099986, 0.099986, 0.099986, 1, 0.025363795, 0.025363805, 0.02536378, 0.9387677, 0.145098, 0.145098, 0.145098, 0.52549)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_b66j4"]
 gradient = SubResource("Gradient_t06nr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7lelg"]
 emission_shape = 1
-emission_sphere_radius = 3.0
+emission_sphere_radius = 1.0
 direction = Vector3(0, -1, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 2.5
@@ -61,32 +56,24 @@ color_ramp = SubResource("GradientTexture1D_b66j4")
 [sub_resource type="SphereMesh" id="SphereMesh_b66j4"]
 material = SubResource("StandardMaterial3D_7lelg")
 
-[node name="TestDummy" type="StaticBody3D"]
-collision_layer = 16
-collision_mask = 16
-script = ExtResource("1_4w46t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10580444, 0.053466797, -0.25738525)
-shape = SubResource("BoxShape3D_4w46t")
-debug_color = Color(0.9476723, 0.0920861, 0.5272838, 0.41960785)
+[node name="boom" type="Node3D"]
 
 [node name="fire" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.079597995, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0159196, 0)
 emitting = false
-amount = 30
-lifetime = 0.6
+amount = 12
+lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_j2jdl")
 draw_pass_1 = SubResource("SphereMesh_t06nr")
 
 [node name="smoke" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.079597995, 0)
-amount = 20
-lifetime = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0159196, 0)
+emitting = false
+amount = 12
+lifetime = 0.5
 one_shot = true
-speed_scale = 0.5
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_7lelg")
 draw_pass_1 = SubResource("SphereMesh_b66j4")

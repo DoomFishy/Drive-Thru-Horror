@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-const TEST_WORLD = preload("uid://buahw34qee6w5")
+const TEST_WORLD = preload("res://scenes/levels/map.tscn")
 
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_packed(TEST_WORLD)

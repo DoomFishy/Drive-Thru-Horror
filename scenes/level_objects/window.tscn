@@ -461,11 +461,29 @@ npc_display_name = "Mom?"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84995186, 0)
 visible = false
 
+[node name="dialogue_trigger" parent="car/CarHolder/homeless" node_paths=PackedStringArray("npc") instance=ExtResource("10_n6xc3")]
+transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
+dialogue_file_path = "res://dialogue/content/npc_homelessGuy.json"
+npc = NodePath("..")
+npc_display_name = "Mom?"
+
 [node name="co-worker" parent="car/CarHolder" instance=ExtResource("19_fdmww")]
 visible = false
 
+[node name="dialogue_trigger" parent="car/CarHolder/co-worker" node_paths=PackedStringArray("npc") instance=ExtResource("10_n6xc3")]
+transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
+dialogue_file_path = "res://dialogue/content/npc_co-workerMikey.json"
+npc = NodePath("..")
+npc_display_name = "Mom?"
+
 [node name="monster" parent="car/CarHolder" instance=ExtResource("19_t1k6h")]
 visible = false
+
+[node name="dialogue_trigger" parent="car/CarHolder/monster" node_paths=PackedStringArray("npc") instance=ExtResource("10_n6xc3")]
+transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
+dialogue_file_path = "res://dialogue/content/npc_monster.json"
+npc = NodePath("..")
+npc_display_name = "Mom?"
 
 [node name="TestDummy" parent="car/CarHolder" instance=ExtResource("11_hwlaa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0667369, 0)
@@ -513,7 +531,7 @@ mesh = SubResource("TorusMesh_82nkc")
 surface_material_override/0 = SubResource("StandardMaterial3D_dxsxa")
 
 [node name="SpotLight3D5" type="SpotLight3D" parent="lights"]
-transform = Transform3D(1, 0, 0, 0, 0.8898229, 0.45630607, 0, -0.45630607, 0.8898229, -2.281244, -9.724297, 0.17593479)
+transform = Transform3D(1, 0, 0, 0, 0.8360852, 0.54859966, 0, -0.54859966, 0.8360852, -2.281244, -8.268931, 0.17593479)
 light_energy = 5.0
 spot_range = 7.20396
 spot_angle = 45.476402
