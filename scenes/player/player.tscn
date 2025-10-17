@@ -1,25 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://dt0hn2cgtf5g1"]
+[gd_scene load_steps=12 format=3 uid="uid://dt0hn2cgtf5g1"]
 
 [ext_resource type="Script" uid="uid://d1x4u7h3ps15v" path="res://scenes/player/scripts/player.gd" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://b41j15x3dwiqt" path="res://scenes/player/scripts/head.gd" id="2_dovo2"]
 [ext_resource type="Script" uid="uid://b81ipwmbcngqb" path="res://scenes/player/scripts/interact_controller.gd" id="3_gmlin"]
 [ext_resource type="Script" uid="uid://g0n3yac6oaq7" path="res://scenes/player/scripts/hitScan.gd" id="3_lvxji"]
+[ext_resource type="Shader" uid="uid://b3afst3doe333" path="res://assets/shaders/pixelate.gdshader" id="4_p47bc"]
+[ext_resource type="AudioStream" uid="uid://dtg7bk3bjt2gx" path="res://assets/audio/phone-pick-up-46796.mp3" id="6_75vfm"]
+[ext_resource type="AudioStream" uid="uid://c4dvd2hf1k356" path="res://assets/audio/gun-shot-sound-effect-224087.mp3" id="7_0owmy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x7p2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_x7p2l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p47bc"]
-shader = ExtResource("3_lvxji")
+shader = ExtResource("4_p47bc")
 shader_parameter/exposure = 1.0
 shader_parameter/contrast = 1.05
 shader_parameter/saturation = 0.9
 shader_parameter/enable_pixelate = true
-shader_parameter/pixel_factor = 3.0
+shader_parameter/pixel_factor = 2.500000095
 shader_parameter/enable_posterize = true
 shader_parameter/color_levels = 16.0
 shader_parameter/dither_strength = 0.35
-shader_parameter/chrom_aberration = 0.0
+shader_parameter/chrom_aberration = 0.07
 shader_parameter/vignette_strength = 1.0
 shader_parameter/grain_strength = 0.2
 shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
@@ -32,7 +35,6 @@ shader_parameter/viewport_size_override = Vector2(0, 0)
 collision_mask = 2
 script = ExtResource("1_dovo2")
 speed = 10.0
-jump_power = 8.0
 gravity = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -50,14 +52,24 @@ camera = NodePath("Camera3D")
 script = ExtResource("3_lvxji")
 
 [node name="InteractRaycast" type="RayCast3D" parent="head/Camera3D"]
+visible = false
 target_position = Vector3(0, 0, -5)
 collision_mask = 14
 collide_with_areas = true
 
 [node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
 material = SubResource("ShaderMaterial_p47bc")
-offset_right = 1174.0
-offset_bottom = 667.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1474.0
+offset_top = -879.0
+offset_right = 1543.0
+offset_bottom = 1058.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemHolder" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42254293, -0.17254883, -0.55524206)
@@ -80,3 +92,11 @@ grow_vertical = 2
 [node name="MeshInstance2D" type="MeshInstance2D" parent="tempCrosshair"]
 scale = Vector2(10, 10)
 mesh = SubResource("SphereMesh_gmlin")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_75vfm")
+volume_db = -10.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0owmy")
+volume_db = -10.0

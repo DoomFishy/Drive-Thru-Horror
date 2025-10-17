@@ -4,8 +4,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umwm6"]
 
-[node name="dialogue_trigger" type="Node3D"]
+[node name="dialogue_trigger" type="Node3D" node_paths=PackedStringArray("collision")]
 script = ExtResource("1_umwm6")
+collision = NodePath("trigger/collision")
 
 [node name="trigger" type="Area3D" parent="."]
 

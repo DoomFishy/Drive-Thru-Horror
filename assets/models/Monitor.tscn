@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmwwxu20706p4"]
+[gd_scene load_steps=6 format=3 uid="uid://dmwwxu20706p4"]
+
+[ext_resource type="Texture2D" uid="uid://nj72wcdluipk" path="res://assets/models/kitchen/assembly_machine_Metal029_1K-JPG_Color.jpg" id="1_orc66"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5x03e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orc66"]
+albedo_color = Color(0, 0.7882353, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.59607846, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gyjfv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyjfv"]
+albedo_texture = ExtResource("1_orc66")
 
 [node name="Monitor" type="Node3D"]
 
@@ -16,3 +24,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_orc66")
 [node name="MonitorBody" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.52920055, 0, 0, 0, 0.02, 0, 0, 0)
 mesh = SubResource("BoxMesh_gyjfv")
+surface_material_override/0 = SubResource("StandardMaterial3D_gyjfv")

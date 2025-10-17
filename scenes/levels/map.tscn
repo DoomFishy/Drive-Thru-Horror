@@ -1,13 +1,23 @@
-[gd_scene load_steps=16 format=3 uid="uid://4tqobfdwecr1"]
+[gd_scene load_steps=28 format=3 uid="uid://4tqobfdwecr1"]
 
 [ext_resource type="PackedScene" uid="uid://dt0hn2cgtf5g1" path="res://scenes/player/player.tscn" id="2_fpdas"]
+[ext_resource type="PackedScene" uid="uid://mda7h5q1uxl1" path="res://scenes/assembly_system/ingredients_container.tscn" id="9_t6f8k"]
 [ext_resource type="Texture2D" uid="uid://qbem37reabs5" path="res://assets/models/building/5.png" id="9_xvo3l"]
+[ext_resource type="PackedScene" uid="uid://b364sm28y051l" path="res://scenes/cooking/patty.tscn" id="10_ymadj"]
+[ext_resource type="Texture2D" uid="uid://d3qxn8rsi8rga" path="res://assets/models/ingredients/patty_Fabric026_1K-JPG_Color.jpg" id="11_khiwx"]
+[ext_resource type="PackedScene" uid="uid://bvbnxnus21m8j" path="res://scenes/assembly_system/ingredients/ingredient_onion.tscn" id="12_i8od5"]
 [ext_resource type="Texture2D" uid="uid://bj0x0vh3oymk7" path="res://assets/models/building/7.png" id="13_gnus1"]
-[ext_resource type="Texture2D" uid="uid://bt20jvi3ktfv3" path="res://assets/models/kitchen/assembly_machine_Metal031_1K-JPG_Color.jpg" id="14_edxlo"]
+[ext_resource type="Texture2D" uid="uid://diegkx2v2vqqq" path="res://assets/models/ingredients/onion_onion.png" id="13_umhqu"]
+[ext_resource type="PackedScene" uid="uid://p4m0wthqe1pm" path="res://scenes/assembly_system/ingredients/ingredient_tomato.tscn" id="14_hrxrd"]
 [ext_resource type="Texture2D" uid="uid://ccmwp1q68gnqc" path="res://assets/models/building/4.png" id="14_jr446"]
-[ext_resource type="Texture2D" uid="uid://nj72wcdluipk" path="res://assets/models/kitchen/assembly_machine_Metal029_1K-JPG_Color.jpg" id="15_gnus1"]
-[ext_resource type="PackedScene" uid="uid://cifi8iv21obrs" path="res://assets/models/Car.glb" id="17_qo8tj"]
+[ext_resource type="Texture2D" uid="uid://sc25u840bt5u" path="res://assets/models/ingredients/tomato_pngtree-tomato-fruit-slice-png-image_10127690-3059477561.png" id="15_8xdwy"]
+[ext_resource type="PackedScene" uid="uid://dvjrxssm1ejch" path="res://scenes/assembly_system/ingredients/ingredient_lettuce.tscn" id="16_fgal4"]
+[ext_resource type="Texture2D" uid="uid://blyyd1xblbp0b" path="res://assets/models/ingredients/lettuce_1000_F_111496362_zI8piJoKqAsu0MZvgtnZ8DlhJMpGJoE9-3101628760.jpg" id="17_6ccxe"]
+[ext_resource type="PackedScene" uid="uid://bmg6cd62cxe18" path="res://dialogue/dialogue_ui.tscn" id="18_08ohx"]
+[ext_resource type="PackedScene" uid="uid://dv0k5kwyl7xh7" path="res://scenes/assembly_system/ingredients/ingredient_top_bun.tscn" id="18_anigj"]
 [ext_resource type="PackedScene" uid="uid://df0mspp5gq514" path="res://scenes/level_objects/window.tscn" id="18_ekwbd"]
+[ext_resource type="Texture2D" uid="uid://cfxq1jdjuwvqr" path="res://assets/models/ingredients/bun_top_good-sandwich-picture-id835407256-334733374.jpg" id="19_7hypd"]
+[ext_resource type="PackedScene" uid="uid://beicbyn5cy1e0" path="res://scenes/assembly_system/ingredients/ingredient_bottom_bun.tscn" id="20_oxjr2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_db2vl"]
 sky_top_color = Color(0.032619108, 0.08027861, 0.13110289, 1)
@@ -25,26 +35,34 @@ sky = SubResource("Sky_05abr")
 ambient_light_source = 2
 ambient_light_color = Color(0.0768358, 0.07683582, 0.076835774, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_gnus1"]
-size = Vector2(58.845, 5.995)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rg7r"]
+albedo_texture = ExtResource("11_khiwx")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jr446"]
-albedo_texture = ExtResource("14_edxlo")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbtyt"]
+albedo_texture = ExtResource("13_umhqu")
 
-[sub_resource type="BoxMesh" id="BoxMesh_edxlo"]
-size = Vector3(50.435, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pl2do"]
+albedo_texture = ExtResource("15_8xdwy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo8tj"]
-albedo_texture = ExtResource("15_gnus1")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ookhf"]
+albedo_texture = ExtResource("17_6ccxe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsxn8"]
+albedo_texture = ExtResource("19_7hypd")
+uv1_scale = Vector3(0.6, 0.6, 0.6)
+uv1_offset = Vector3(0.47, 0.09, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dim3t"]
+albedo_texture = ExtResource("19_7hypd")
+uv1_scale = Vector3(0.81, 0.81, 0.81)
+uv1_offset = Vector3(-0.145, 0.165, 0)
 
 [node name="Map" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_fpdas")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41015482, 1.4285765, 3.3877742)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65571856, 0.9085659, 3.4033136)
 speed = 5.0
+jump_power = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jawwy")
@@ -133,18 +151,63 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.38736, 1.9550829, 23.9978
 modulate = Color(0, 0.8229908, 0, 1)
 texture = ExtResource("14_jr446")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7663138, 11.826447)
-mesh = SubResource("PlaneMesh_gnus1")
-surface_material_override/0 = SubResource("StandardMaterial3D_jr446")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4039513, 14.31871)
-mesh = SubResource("BoxMesh_edxlo")
-surface_material_override/0 = SubResource("StandardMaterial3D_qo8tj")
-
-[node name="Car2" parent="." instance=ExtResource("17_qo8tj")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.38413596, -0.6302813, 11.5627575)
-
 [node name="building" parent="." instance=ExtResource("18_ekwbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007297516, -0.09, 0.038246274)
+metadata/_edit_lock_ = true
+
+[node name="IngredientsContainer" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, 2.2140143)
+ingredient = ExtResource("10_ymadj")
+
+[node name="Cube" parent="IngredientsContainer/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_3rg7r")
+
+[node name="IngredientsContainer2" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, 1.5141704)
+ingredient = ExtResource("12_i8od5")
+
+[node name="Cube" parent="IngredientsContainer2/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_xbtyt")
+
+[node name="IngredientsContainer3" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, 0.85553014)
+ingredient = ExtResource("14_hrxrd")
+
+[node name="Cube" parent="IngredientsContainer3/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_pl2do")
+
+[node name="IngredientsContainer4" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, 0.1997518)
+ingredient = ExtResource("16_fgal4")
+
+[node name="Cube" parent="IngredientsContainer4/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_ookhf")
+
+[node name="IngredientsContainer5" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, -0.47795004)
+ingredient = ExtResource("18_anigj")
+
+[node name="Cube" parent="IngredientsContainer5/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_qsxn8")
+
+[node name="IngredientsContainer6" parent="." instance=ExtResource("9_t6f8k")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.0231452, 0.8767355, -1.2167053)
+ingredient = ExtResource("20_oxjr2")
+
+[node name="Cube" parent="IngredientsContainer6/food_container" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_dim3t")
+
+[node name="dialogue_ui" parent="." instance=ExtResource("18_08ohx")]
+
+[editable path="IngredientsContainer"]
+[editable path="IngredientsContainer/food_container"]
+[editable path="IngredientsContainer2"]
+[editable path="IngredientsContainer2/food_container"]
+[editable path="IngredientsContainer3"]
+[editable path="IngredientsContainer3/food_container"]
+[editable path="IngredientsContainer4"]
+[editable path="IngredientsContainer4/food_container"]
+[editable path="IngredientsContainer5"]
+[editable path="IngredientsContainer5/food_container"]
+[editable path="IngredientsContainer6"]
+[editable path="IngredientsContainer6/food_container"]

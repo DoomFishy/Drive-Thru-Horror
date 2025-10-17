@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn5cfhw8rfjh7"
+path="res://.godot/imported/alvin jumpscare.mp3-8b51856f614a091e167cf6272908db7e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/alvin jumpscare.mp3"
+dest_files=["res://.godot/imported/alvin jumpscare.mp3-8b51856f614a091e167cf6272908db7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

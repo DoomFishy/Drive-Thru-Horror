@@ -1,13 +1,16 @@
 extends Node
 
-var alive = true
-
 func hit():
-	alive = false
-	print("Enemy hit! Alive:", alive)
-	
-	$MeshInstance3D.visible = false
 	$CollisionShape3D.disabled = true
-
-	await get_tree().create_timer(1.0).timeout
-	queue_free()
+	get_parent().get_child(get_parent().get_parent().index).visible = false
+	get_parent().get_parent().index += 1
+	$"../../../order_drop_off".current_index += 1
+	
+	
+	Global.order_started = false
+	$fire.emitting = true
+	$smoke.emitting = true
+	
+	await get_tree().create_timer(1).timeout
+	
+	$CollisionShape3D.disabled = false

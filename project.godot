@@ -15,6 +15,10 @@ run/main_scene="uid://b2yv7lmi07hfj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scenes/Global.gd"
+
 [dotnet]
 
 project/assembly_name="Scream Jam 2025"
@@ -33,6 +37,8 @@ folder_colors={
 [global_group]
 
 ingredient=""
+patty=""
+gun=""
 
 [input]
 
@@ -91,3 +97,8 @@ pause={
 3d_physics/layer_3="items"
 3d_physics/layer_4="interactables"
 3d_physics/layer_5="Enemy"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
