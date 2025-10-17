@@ -34,8 +34,7 @@ func _physics_process(delta: float) -> void:
 	move()
 	move_and_slide()
 
-func _process(_delta: float) -> void:
-	change_mouse_mode()
+
 
 func move() -> void:
 	if input_direction:

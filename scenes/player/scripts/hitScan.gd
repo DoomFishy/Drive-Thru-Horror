@@ -9,6 +9,7 @@ var has_gun = false
 func _input(event):
 		if event.is_action_pressed("Fire") and has_gun:
 			Get_Camera_Collision()
+			await get_tree().create_timer(0.5).timeout
 			_camera_shake()
 			$"../../AudioStreamPlayer2".playing = true
 
@@ -37,9 +38,9 @@ func Get_Camera_Collision():
 	else:
 		print("Nothing")
 
-
 func _camera_shake():
 	var initial_transform = get_parent().transform 
+
 	var elapsed_time = 0.0
 
 	while elapsed_time < period:

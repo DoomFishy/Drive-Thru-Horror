@@ -1,58 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgl5dsjt7aj88"]
+[gd_scene load_steps=7 format=3 uid="uid://cgl5dsjt7aj88"]
 
 [ext_resource type="Script" uid="uid://vmd4d41p6bfv" path="res://scenes/levels/end.gd" id="1_5bcbc"]
-
-[sub_resource type="Animation" id="Animation_5bcbc"]
-resource_name = "show_description"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2, 2.9899998),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label2:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("score:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4, 4.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("message:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(6, 7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
+[ext_resource type="Texture2D" uid="uid://chat2236kvj85" path="res://assets/audio/jumpscare 2.png" id="2_fb5ls"]
+[ext_resource type="AudioStream" uid="uid://cn5cfhw8rfjh7" path="res://assets/audio/alvin jumpscare.mp3" id="3_8v4vh"]
 
 [sub_resource type="Animation" id="Animation_fb5ls"]
 length = 0.001
@@ -105,6 +55,58 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_5bcbc"]
+resource_name = "show_description"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 2.9899998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("score:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 4.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("message:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8v4vh"]
 _data = {
 &"RESET": SubResource("Animation_fb5ls"),
@@ -115,10 +117,10 @@ _data = {
 script = ExtResource("1_5bcbc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -28.0
-offset_top = -15.0
-offset_right = 1176.0
-offset_bottom = 675.0
+offset_left = -564.0
+offset_top = -374.0
+offset_right = 1758.0
+offset_bottom = 1160.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -179,3 +181,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_8v4vh")
 }
 autoplay = "show_description"
+
+[node name="Jumpscare2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(586.00006, 484)
+scale = Vector2(8.953333, 8.953333)
+texture = ExtResource("2_fb5ls")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8v4vh")
+volume_db = -4.0
