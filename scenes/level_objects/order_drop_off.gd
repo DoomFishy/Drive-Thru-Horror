@@ -103,4 +103,5 @@ func _on_area_entered(area: Area3D) -> void:
 		check_submission()
 		area.queue_free()
 		car.exit()
+		$AudioStreamPlayer3D.playing = true
 	

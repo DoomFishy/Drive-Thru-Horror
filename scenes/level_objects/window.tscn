@@ -1,6 +1,7 @@
-[gd_scene load_steps=76 format=3 uid="uid://df0mspp5gq514"]
+[gd_scene load_steps=78 format=3 uid="uid://df0mspp5gq514"]
 
 [ext_resource type="Script" uid="uid://bnxs31ruc1rr0" path="res://scenes/level_objects/car.gd" id="1_41ko5"]
+[ext_resource type="AudioStream" uid="uid://de1mr0nh5s8p4" path="res://assets/audio/window-opening-100430.mp3" id="1_d48mm"]
 [ext_resource type="PackedScene" uid="uid://d1ft2aq5jwf48" path="res://assets/models/building/wall.glb" id="1_exsec"]
 [ext_resource type="PackedScene" uid="uid://wi08u1lojhiw" path="res://assets/models/building/floor.glb" id="1_gk3xu"]
 [ext_resource type="PackedScene" uid="uid://bu0mb32dh4to" path="res://assets/models/car/Car2.glb" id="1_t1k6h"]
@@ -27,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwwxu20706p4" path="res://assets/models/Monitor.tscn" id="14_82nkc"]
 [ext_resource type="PackedScene" uid="uid://bg23q66011yne" path="res://assets/models/button.tscn" id="15_82nkc"]
 [ext_resource type="Script" uid="uid://jve60ca0p273" path="res://scenes/player/scripts/Orders.gd" id="16_dxsxa"]
+[ext_resource type="AudioStream" uid="uid://u70vtss7v08u" path="res://assets/audio/ding-402325.mp3" id="18_mc4u3"]
 [ext_resource type="Texture2D" uid="uid://nj72wcdluipk" path="res://assets/models/kitchen/assembly_machine_Metal029_1K-JPG_Color.jpg" id="18_t1k6h"]
 [ext_resource type="PackedScene" uid="uid://cifi8iv21obrs" path="res://assets/models/car/Car.glb" id="19_fdmww"]
 [ext_resource type="PackedScene" uid="uid://bx672p8gp8xf7" path="res://assets/models/car/Car3.glb" id="19_t1k6h"]
@@ -117,6 +119,33 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hwlaa"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_50oq2"]
 resource_name = "window_open"
@@ -188,20 +217,17 @@ tracks/5/keys = {
 "points": PackedFloat32Array(1.2343647, 0, 0, 0.083333336, 0.070284784, 1.6560735, -0.083333336, -0.07028477, 0, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
-
-[sub_resource type="Animation" id="Animation_hwlaa"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_237f5"]
@@ -209,42 +235,6 @@ _data = {
 &"RESET": SubResource("Animation_gk3xu"),
 &"fade": SubResource("Animation_hwlaa"),
 &"window_open": SubResource("Animation_50oq2")
-}
-
-[sub_resource type="Animation" id="Animation_bq8qh"]
-resource_name = "arrive"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("car/CarHolder:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-14.301156, 0, 0, 0.16666667, 2.2795923, -0.6236026, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("car/CarHolder:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(-0.452882, 0, 0, 0.16666667, 0, -0.452882, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("car/CarHolder:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2, 2),
-"points": PackedFloat32Array(10.325775, 0, 0, 0.16666667, 0, 10.325775, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="Animation" id="Animation_41ko5"]
@@ -281,6 +271,42 @@ tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(10.325775, 0, 0, 0.16666667, 0),
 "times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_bq8qh"]
+resource_name = "arrive"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("car/CarHolder:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-14.301156, 0, 0, 0.16666667, 2.2795923, -0.6236026, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("car/CarHolder:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(-0.452882, 0, 0, 0.16666667, 0, -0.452882, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("car/CarHolder:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(10.325775, 0, 0, 0.16666667, 0, 10.325775, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
 }
 
 [sub_resource type="Animation" id="Animation_o53cc"]
@@ -430,6 +456,10 @@ albedo_texture = ExtResource("18_t1k6h")
 uv1_triplanar = true
 
 [node name="building" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89964867, 2.3841858e-07, 8.016068)
+stream = ExtResource("1_d48mm")
 
 [node name="WindowAnim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -619,6 +649,10 @@ car = NodePath("../car")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="order_drop_off"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5118742, 1.3483181, 8.118933)
 shape = SubResource("BoxShape3D_apkel")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="order_drop_off"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8966019, 2.3841858e-07, 7.3282385)
+stream = ExtResource("18_mc4u3")
 
 [node name="window_area" type="Area3D" parent="." node_paths=PackedStringArray("animPlayer")]
 collision_layer = 0

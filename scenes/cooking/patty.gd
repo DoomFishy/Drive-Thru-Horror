@@ -24,11 +24,13 @@ func start_cooking (): # cooking function
 	burnt_printed = false   # RESET for this specific patty
 	print ("Patty is cooking on stove.")
 	$smoke.emitting = true
+	$AudioStreamPlayer3D.playing = true
 		
 func stop_cooking (): # when the patty stops cooking
 	is_on_stove = false
 	print ("Patty stopped cooking.")
 	$smoke.emitting = false
+	$AudioStreamPlayer3D.playing = false
 
 func _process (delta):
 	if (is_on_stove): # check if its in cooking state

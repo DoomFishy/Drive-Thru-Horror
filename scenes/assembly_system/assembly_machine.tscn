@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dfwikv18bu8is"]
+[gd_scene load_steps=15 format=3 uid="uid://dfwikv18bu8is"]
 
 [ext_resource type="Script" uid="uid://be1olesoifdi2" path="res://scenes/assembly_system/scripts/assembly_machine.gd" id="1_lc1mj"]
 [ext_resource type="Script" uid="uid://djkopft4nqjol" path="res://scenes/assembly_system/scripts/button.gd" id="2_i5rei"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bt20jvi3ktfv3" path="res://assets/models/kitchen/assembly_machine_Metal031_1K-JPG_Color.jpg" id="4_m6q0d"]
 [ext_resource type="PackedScene" uid="uid://o3i786s7plav" path="res://assets/models/kitchen/assembly_machine.glb" id="4_vdn38"]
 [ext_resource type="Texture2D" uid="uid://d7ls1groj4lx" path="res://assets/models/kitchen/commerical_flat_top_Metal029_1K-JPG_Color.jpg" id="5_xhsm7"]
+[ext_resource type="AudioStream" uid="uid://cqiy8vnp0us6y" path="res://assets/audio/button-press-382713.mp3" id="6_xhsm7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lc1mj"]
 
@@ -67,6 +68,10 @@ transform = Transform3D(0.29, 0, 0, 0, -1.2676303e-08, -0.29, 0, 0.29, -1.267630
 mesh = SubResource("CylinderMesh_yuny5")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4mo2j")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="button"]
+stream = ExtResource("6_xhsm7")
+volume_db = -10.0
 
 [node name="BurgerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9796047, -0.18203378, 0)

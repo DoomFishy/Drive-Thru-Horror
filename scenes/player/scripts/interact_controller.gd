@@ -31,7 +31,8 @@ func pickup_item() -> void:
 	item.get_parent().remove_child(item) # remove item from world
 	itemHolder.add_child(item) # add item to hand
 	item.position = Vector3.ZERO # reset item position
-	
+	if item.is_in_group("gun"):
+		$"../AudioStreamPlayer".playing = true
 
 func drop_item() -> void:
 	itemHolder.remove_child(item) # remove item from hand

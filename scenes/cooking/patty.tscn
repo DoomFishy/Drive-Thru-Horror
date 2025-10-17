@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://b364sm28y051l"]
+[gd_scene load_steps=15 format=3 uid="uid://b364sm28y051l"]
 
 [ext_resource type="Script" uid="uid://b624rrprqhqem" path="res://scenes/cooking/patty.gd" id="1_0ry88"]
 [ext_resource type="Texture2D" uid="uid://d3qxn8rsi8rga" path="res://assets/models/ingredients/patty_Fabric026_1K-JPG_Color.jpg" id="2_reho8"]
+[ext_resource type="AudioStream" uid="uid://cm5jgji8ro5iw" path="res://assets/audio/frying-steak-74556.mp3" id="3_iikc4"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8ec5h"]
 top_radius = 0.2
@@ -72,3 +73,7 @@ transparency = 0.45
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_xh3we")
 draw_pass_1 = SubResource("SphereMesh_13f12")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_iikc4")
+volume_db = -10.0

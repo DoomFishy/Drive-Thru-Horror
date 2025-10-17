@@ -30,6 +30,7 @@ func _ready():
 	order_keys = orders.keys()  # store the keys for indexed access
 
 func interact():
+	$AudioStreamPlayer3D.playing = true
 	car.arrive()
 	if Global.order_started == false:
 		print("CURRENT: ", current_index)

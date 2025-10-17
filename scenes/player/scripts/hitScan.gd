@@ -10,6 +10,7 @@ func _input(event):
 		if event.is_action_pressed("Fire") and has_gun:
 			Get_Camera_Collision()
 			_camera_shake()
+			$"../../AudioStreamPlayer2".playing = true
 
 func Get_Camera_Collision():
 	var center = get_viewport().get_size()/2
