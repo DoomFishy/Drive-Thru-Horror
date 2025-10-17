@@ -1,17 +1,23 @@
-[gd_scene load_steps=42 format=3 uid="uid://b2yv7lmi07hfj"]
+[gd_scene load_steps=51 format=3 uid="uid://b2yv7lmi07hfj"]
 
 [ext_resource type="Script" uid="uid://bbbjypkksgosg" path="res://scenes/mainMenu/Scripts/mainMenuScript.gd" id="2_e8eeb"]
 [ext_resource type="Texture2D" uid="uid://qbem37reabs5" path="res://assets/models/building/5.png" id="2_gf72h"]
 [ext_resource type="Texture2D" uid="uid://bj0x0vh3oymk7" path="res://assets/models/building/7.png" id="3_61cjs"]
 [ext_resource type="Texture2D" uid="uid://ccmwp1q68gnqc" path="res://assets/models/building/4.png" id="4_v4ko1"]
 [ext_resource type="PackedScene" uid="uid://bx672p8gp8xf7" path="res://assets/models/car/Car3.glb" id="14_p6a6j"]
+[ext_resource type="FontFile" uid="uid://bsuei2yvpll4e" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="16_gtai5"]
 [ext_resource type="PackedScene" uid="uid://wi08u1lojhiw" path="res://assets/models/building/floor.glb" id="16_yr68s"]
 [ext_resource type="PackedScene" uid="uid://d1ft2aq5jwf48" path="res://assets/models/building/wall.glb" id="17_f8er4"]
 [ext_resource type="Texture2D" uid="uid://bofddpn1imh8d" path="res://assets/models/building/wall_Plaster006_1K-JPG_Color.jpg" id="18_umggi"]
 [ext_resource type="Texture2D" uid="uid://dy7aofpgxqlw5" path="res://assets/models/building/wall_Bricks073A_1K-JPG_Color.jpg" id="19_jwxvf"]
 [ext_resource type="Texture2D" uid="uid://bt20jvi3ktfv3" path="res://assets/models/kitchen/assembly_machine_Metal031_1K-JPG_Color.jpg" id="20_3s3nw"]
 [ext_resource type="Texture2D" uid="uid://xex5gtjl5kh2" path="res://assets/title.png" id="21_mxubs"]
+[ext_resource type="PackedScene" uid="uid://b2swv544njt6" path="res://assets/models/glass-bottle.glb" id="23_c1yp7"]
 [ext_resource type="PackedScene" uid="uid://6sqgjirh61si" path="res://assets/models/kitchen/commercial_table.glb" id="23_kbm6m"]
+[ext_resource type="PackedScene" uid="uid://116hv5a1pgnq" path="res://assets/models/CardboardBox_1.glb" id="24_382e6"]
+[ext_resource type="PackedScene" uid="uid://b3kpyv5xyrr03" path="res://assets/models/cardboard-box.glb" id="25_k8880"]
+[ext_resource type="PackedScene" uid="uid://byht6fxrtyroo" path="res://assets/models/trash-bag.glb" id="26_5fl14"]
+[ext_resource type="PackedScene" uid="uid://c2x1iuobnc41e" path="res://assets/models/barrel.glb" id="27_xg0em"]
 [ext_resource type="Shader" uid="uid://b3afst3doe333" path="res://assets/shaders/pixelate.gdshader" id="31_8jsec"]
 [ext_resource type="PackedScene" uid="uid://bg23q66011yne" path="res://assets/models/button.tscn" id="31_fws4r"]
 [ext_resource type="PackedScene" uid="uid://c3me5uug86lxv" path="res://assets/models/ingredients/bun_bot.glb" id="32_wl74u"]
@@ -105,6 +111,8 @@ shader_parameter/tint_strength = 0.15
 shader_parameter/viewport_size_override = Vector2(0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hwip"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
 bg_color = Color(0.53986263, 1.0348111e-06, 2.8878452e-07, 1)
 border_width_left = 2
 border_width_top = 2
@@ -142,6 +150,176 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="Animation" id="Animation_gtai5"]
+resource_name = "lights"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Map/building/wall/Cube_005:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0, 6.152519, -0.25, 0, 0.25, 0, 6.152519, -0.16833334, 0, 0, 0, 6.152519, -0.16833334, 0, 0, 0, 6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.866667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Map/building/wall/Cube_005:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0, 1.5541326, -0.25, 0, 0.25, 0, 1.5541325, -0.16833334, 1.9868216e-08, 0, 0, 1.5541325, -0.16833334, 1.9868216e-08, 0, 0, 1.5541326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.866667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Map/building/wall/Cube_005:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.81460464, -0.25, 0, 0.25, 0, 0.81460464, -0.25, 0, 0.25, 0, 0.47212777, -0.16833334, 0.057079483, 0, 0, 0.47212777, -0.16833334, 0.057079483, 0, 0, 0.81460464, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.866667)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Map/building/wall/Cube_003:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0, 6.152519, -0.25, 0, 0.25, 0, 6.152519, -0.16833334, 0, 0, 0, 6.152519, -0.16833334, 0, 0, 0, 6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.9)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Map/building/wall/Cube_003:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.5541326, -0.25, 0, 0.25, 0, 1.5541326, -0.25, 0, 0.25, 0, 1.5541325, -0.16833334, 1.9868216e-08, 0, 0, 1.5541325, -0.16833334, 1.9868216e-08, 0, 0, 1.5541326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.9)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Map/building/wall/Cube_003:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.2343649, -0.25, 0, 0.25, 0, 1.2343649, -0.25, 0, 0.25, 0, 1.5493028, -0.16833334, -0.05248966, 0, 0, 1.5493028, -0.16833334, -0.05248966, 0, 0, 1.2343649, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1333334, 5.7, 9.066667, 9.9)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Map/building/lights/SpotLight3D4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 5, 5.133333, 5.233333, 8.6, 8.733334, 8.833334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, true, false, true, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_c1yp7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Map/building/wall/Cube_005:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Map/building/wall/Cube_005:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5541325, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Map/building/wall/Cube_005:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.47212777, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Map/building/wall/Cube_003:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(6.152519, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Map/building/wall/Cube_003:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5541325, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Map/building/wall/Cube_003:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5493028, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Map/building/lights/SpotLight3D4:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q68jy"]
+_data = {
+&"RESET": SubResource("Animation_c1yp7"),
+&"lights": SubResource("Animation_gtai5")
+}
 
 [node name="TestWorld" type="Node3D"]
 
@@ -255,10 +433,10 @@ surface_material_override/1 = SubResource("StandardMaterial3D_ttwuq")
 metadata/_edit_lock_ = true
 
 [node name="Cube_005" parent="Map/building/wall" index="1"]
-transform = Transform3D(0.073557466, 0, 0, 0, 0.691692, 0, 0, 0, 0.20988002, 6.152519, 1.5541326, 0.81460464)
+transform = Transform3D(0.073557466, 0, 0, 0, 0.691692, 0, 0, 0, 0.20988002, 6.152519, 1.5541325, 0.47212777)
 
 [node name="Cube_003" parent="Map/building/wall" index="2"]
-transform = Transform3D(0.073557466, 0, 0, 0, 0.691692, 0, 0, 0, 0.20988002, 6.152519, 1.5541326, 1.2343649)
+transform = Transform3D(0.073557466, 0, 0, 0, 0.691692, 0, 0, 0, 0.20988002, 6.152519, 1.5541325, 1.5493028)
 
 [node name="Cube_001" parent="Map/building/wall" index="3"]
 metadata/_edit_lock_ = true
@@ -416,18 +594,21 @@ offset_right = 1242.0
 offset_bottom = 708.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 23.815
-offset_top = -165.35
-offset_right = 247.81604
-offset_bottom = -7.3485107
+offset_left = 56.045
+offset_top = -262.169
+offset_right = 280.04602
+offset_bottom = -53.168945
 grow_vertical = 0
+theme_override_constants/separation = 19
 script = ExtResource("2_e8eeb")
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("16_gtai5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4hwip")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mxubs")
@@ -436,6 +617,7 @@ text = "Play"
 
 [node name="Option" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("16_gtai5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4hwip")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mxubs")
@@ -444,6 +626,7 @@ text = "Tutorial"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("16_gtai5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4hwip")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mxubs")
@@ -472,6 +655,27 @@ texture_filter = 1
 position = Vector2(290, 210)
 scale = Vector2(2, 2)
 texture = ExtResource("21_mxubs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q68jy")
+}
+autoplay = "lights"
+
+[node name="glass-bottle" parent="." instance=ExtResource("23_c1yp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31601968, 0.7224068, 5.6997733)
+
+[node name="CardboardBox_12" parent="." instance=ExtResource("24_382e6")]
+transform = Transform3D(1.5202469, 0, 0.44841343, 0, 1.585, 0, -0.44841343, 0, 1.5202469, -2.978771, 0.31755072, 6.9515967)
+
+[node name="cardboard-box" parent="." instance=ExtResource("25_k8880")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.112092, 0.70545614, 7.020474)
+
+[node name="trash-bag" parent="." instance=ExtResource("26_5fl14")]
+transform = Transform3D(0.92802495, -0.37251812, 0, 0.37251812, 0.92802495, 0, 0, 0, 1, -1.8842202, 0, 7.0347767)
+
+[node name="barrel" parent="." instance=ExtResource("27_xg0em")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2103095, 0, 6.1349673)
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Option" to="VBoxContainer" method="_on_option_pressed"]

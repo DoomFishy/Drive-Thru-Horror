@@ -19,25 +19,27 @@ func _ready():
 	$MeshInstance3D.material_override = $MeshInstance3D.get_active_material(0).duplicate()
 	
 func start_cooking (): # cooking function
-	state = State.RAW
 	is_on_stove = true
 	cooked_printed = false  # RESET for this specific patty
 	burnt_printed = false   # RESET for this specific patty
 	print ("Patty is cooking on stove.")
+	$smoke.emitting = true
 		
 func stop_cooking (): # when the patty stops cooking
 	is_on_stove = false
 	print ("Patty stopped cooking.")
+	$smoke.emitting = false
 
 func _process (delta):
 	if (is_on_stove): # check if its in cooking state
 		cooking_time += delta # adds time passed since last frame
-		
+
 		if (cooking_time >= max_cooking_time and state != State.COOKED) : # if the time reaches 10 seconds it is cooked
 			state = State.COOKED
 			_change_patty_color(Color(0.661, 0.379, 0.073, 1.0)) # turn brown
 			cooked_printed = true
 			Global.patty_cooked += 1
+			print("COOKED")
 
 		if cooking_time >= burn_time and state != State.BURNT: # if the time is greater than 20 seocnds the patty state is burnt
 			state = State.BURNT

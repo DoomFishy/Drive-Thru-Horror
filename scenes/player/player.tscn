@@ -58,8 +58,17 @@ collide_with_areas = true
 
 [node name="ColorRect" type="ColorRect" parent="head/Camera3D"]
 material = SubResource("ShaderMaterial_p47bc")
-offset_right = 1174.0
-offset_bottom = 667.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1474.0
+offset_top = -879.0
+offset_right = 1543.0
+offset_bottom = 1058.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ItemHolder" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42254293, -0.17254883, -0.55524206)

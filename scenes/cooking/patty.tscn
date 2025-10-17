@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b364sm28y051l"]
+[gd_scene load_steps=14 format=3 uid="uid://b364sm28y051l"]
 
 [ext_resource type="Script" uid="uid://b624rrprqhqem" path="res://scenes/cooking/patty.gd" id="1_0ry88"]
 [ext_resource type="Texture2D" uid="uid://d3qxn8rsi8rga" path="res://assets/models/ingredients/patty_Fabric026_1K-JPG_Color.jpg" id="2_reho8"]
@@ -20,6 +20,37 @@ radius = 0.19677734
 script/source = "extends CollisionShape3D
 "
 
+[sub_resource type="Gradient" id="Gradient_reho8"]
+offsets = PackedFloat32Array(0, 0.490909, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.30588236, 0.30588236, 0.30588236, 0.77254903, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iikc4"]
+gradient = SubResource("Gradient_reho8")
+
+[sub_resource type="Curve" id="Curve_tl5mx"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.382353, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qlyhp"]
+curve = SubResource("Curve_tl5mx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xh3we"]
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 5, 0)
+scale_min = 0.19999999
+scale_max = 0.29999998
+scale_curve = SubResource("CurveTexture_qlyhp")
+color_ramp = SubResource("GradientTexture1D_iikc4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbeir"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_13f12"]
+material = SubResource("StandardMaterial3D_gbeir")
+
 [node name="Patty" type="Area3D" groups=["ingredient", "patty"]]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 collision_layer = 4
@@ -34,3 +65,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8ec5h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.002149582, 0)
 shape = SubResource("CylinderShape3D_reho8")
 script = SubResource("GDScript_8ec5h")
+
+[node name="smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.079597995, 0)
+transparency = 0.45
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_xh3we")
+draw_pass_1 = SubResource("SphereMesh_13f12")

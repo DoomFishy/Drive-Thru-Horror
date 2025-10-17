@@ -22,5 +22,5 @@ func exit():
 		index += 1
 
 func colision(value: bool):
-	if get_node("CarHolder").get_child(index) != null:
+	if index < get_node("CarHolder").get_child_count() - 1:
 		get_node("CarHolder").get_child(index).find_child("dialogue_trigger").collision.disabled = value

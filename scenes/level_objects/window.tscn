@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://df0mspp5gq514"]
+[gd_scene load_steps=76 format=3 uid="uid://df0mspp5gq514"]
 
 [ext_resource type="Script" uid="uid://bnxs31ruc1rr0" path="res://scenes/level_objects/car.gd" id="1_41ko5"]
 [ext_resource type="PackedScene" uid="uid://d1ft2aq5jwf48" path="res://assets/models/building/wall.glb" id="1_exsec"]
@@ -30,6 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://nj72wcdluipk" path="res://assets/models/kitchen/assembly_machine_Metal029_1K-JPG_Color.jpg" id="18_t1k6h"]
 [ext_resource type="PackedScene" uid="uid://cifi8iv21obrs" path="res://assets/models/car/Car.glb" id="19_fdmww"]
 [ext_resource type="PackedScene" uid="uid://bx672p8gp8xf7" path="res://assets/models/car/Car3.glb" id="19_t1k6h"]
+[ext_resource type="PackedScene" uid="uid://116hv5a1pgnq" path="res://assets/models/CardboardBox_1.glb" id="31_rsgor"]
+[ext_resource type="PackedScene" uid="uid://byht6fxrtyroo" path="res://assets/models/trash-bag.glb" id="32_8ury5"]
+[ext_resource type="PackedScene" uid="uid://b2swv544njt6" path="res://assets/models/glass-bottle.glb" id="33_ywkan"]
+[ext_resource type="PackedScene" uid="uid://bgu3ie33ehr75" path="res://assets/models/crumpled-can.glb" id="34_8wiy8"]
+[ext_resource type="PackedScene" uid="uid://c2x1iuobnc41e" path="res://assets/models/barrel.glb" id="35_ywkan"]
+[ext_resource type="PackedScene" uid="uid://b3kpyv5xyrr03" path="res://assets/models/cardboard-box.glb" id="36_8wiy8"]
 
 [sub_resource type="Animation" id="Animation_gk3xu"]
 length = 0.001
@@ -98,6 +104,18 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1.2343649, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_50oq2"]
@@ -171,9 +189,25 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_hwlaa"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_237f5"]
 _data = {
 &"RESET": SubResource("Animation_gk3xu"),
+&"fade": SubResource("Animation_hwlaa"),
 &"window_open": SubResource("Animation_50oq2")
 }
 
@@ -335,6 +369,9 @@ data = PackedVector3Array(-0.5, -0.5, 1.8112297, -0.5, -0.5, -1.8112297, -0.5, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ttwuq"]
 data = PackedVector3Array(-0.5, -0.5, 1.1909637, -0.5, -0.5, -1.1909637, -0.5, 0.5, -1.1909637, 0.5, -0.5, -1.1909637, -0.5, -0.5, -1.1909637, -0.5, -0.5, 1.1909637, -0.5, 0.5, -1.1909637, -0.5, -0.5, -1.1909637, 0.5, -0.5, -1.1909637, -0.5, 0.5, -1.1909637, -0.5, 0.5, 1.1909637, -0.5, -0.5, 1.1909637, -0.5, -0.5, 1.1909637, -0.5, 0.5, 1.1909637, 0.5, 0.5, 1.1909637, 0.5, 0.5, 1.1909637, -0.5, 0.5, 1.1909637, -0.5, 0.5, -1.1909637, -0.5, -0.5, 1.1909637, 0.5, -0.5, 1.1909637, 0.5, -0.5, -1.1909637, 0.5, 0.5, 1.1909637, 0.5, -0.5, 1.1909637, -0.5, -0.5, 1.1909637, 0.5, -0.5, -1.1909637, 0.5, -0.5, 1.1909637, 0.5, 0.5, 1.1909637, 0.5, -0.5, -1.1909637, 0.5, 0.5, -1.1909637, -0.5, 0.5, -1.1909637, -0.5, 0.5, -1.1909637, 0.5, 0.5, -1.1909637, 0.5, 0.5, 1.1909637, 0.5, 0.5, 1.1909637, 0.5, 0.5, -1.1909637, 0.5, -0.5, -1.1909637)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwlaa"]
+size = Vector3(0.7944336, 0.9871826, 2.5622177)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ttwuq"]
 size = Vector3(0.7944336, 0.9871826, 3.896164)
 
@@ -419,7 +456,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569662, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_regCustomer.json"
 npc = NodePath("..")
-npc_display_name = "Dan Pu"
+npc_display_name = "Regular Customer Calvin"
 
 [node name="police" parent="car/CarHolder" instance=ExtResource("5_o53cc")]
 visible = false
@@ -428,7 +465,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_police.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "Officer Burke"
 
 [node name="manager" parent="car/CarHolder" instance=ExtResource("7_hwlaa")]
 visible = false
@@ -437,7 +474,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_manger.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "Manager Jordan"
 
 [node name="mom" parent="car/CarHolder" instance=ExtResource("3_bq8qh")]
 visible = false
@@ -455,7 +492,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_collegeStudent.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "College Kid Kelvin"
 
 [node name="homeless" parent="car/CarHolder" instance=ExtResource("6_n6xc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84995186, 0)
@@ -465,7 +502,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_homelessGuy.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "Homeless Man Daniel"
 
 [node name="co-worker" parent="car/CarHolder" instance=ExtResource("19_fdmww")]
 visible = false
@@ -474,7 +511,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_co-workerMikey.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "Co-Worker Mikey"
 
 [node name="monster" parent="car/CarHolder" instance=ExtResource("19_t1k6h")]
 visible = false
@@ -483,7 +520,7 @@ visible = false
 transform = Transform3D(1.585, 0, 0, 0, 1.84, 0, 0, 0, 3.085, 2.6569672, 0.9255083, -0.30773354)
 dialogue_file_path = "res://dialogue/content/npc_monster.json"
 npc = NodePath("..")
-npc_display_name = "Mom?"
+npc_display_name = "John"
 
 [node name="TestDummy" parent="car/CarHolder" instance=ExtResource("11_hwlaa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0667369, 0)
@@ -661,8 +698,8 @@ transform = Transform3D(-4.371139e-08, 0, 0.78, 0, 1, 0, -1, 0, -3.409488e-08, 1
 shape = SubResource("ConcavePolygonShape3D_ttwuq")
 
 [node name="CSGBakedCollisionShape3D2" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6197667, 0.3082558, -2.6049328)
-shape = SubResource("BoxShape3D_ttwuq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6197667, 0.3082558, -3.271906)
+shape = SubResource("BoxShape3D_hwlaa")
 
 [node name="CSGBakedCollisionShape3D6" type="CollisionShape3D" parent="kitchen/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6197667, 0.3082558, 3.6777875)
@@ -684,7 +721,7 @@ transform = Transform3D(-0.19999997, 0, 1.7484552e-08, 0, 0.19999997, 0, -1.7484
 [node name="CameraView1" type="SubViewport" parent="."]
 
 [node name="CctvCamera" parent="CameraView1" instance=ExtResource("13_ao65r")]
-transform = Transform3D(-0.6240025, 0.25360668, -0.73912454, 4.541486e-09, 0.9458707, 0.3245449, 0.7814225, 0.20251681, -0.59022534, -5.3916364, 2.7076354, 8.327149)
+transform = Transform3D(-0.63630104, 0.4026761, -0.6580072, -0.018209133, 0.8448812, 0.5346445, 0.77122605, 0.35217664, -0.53026605, -5.3916364, 2.7076354, 8.327149)
 
 [node name="Monitor" parent="CameraView1" instance=ExtResource("14_82nkc")]
 transform = Transform3D(-0.75000006, 0, 1.299038, 0, 1.5, 0, -1.299038, 0, -0.75000006, -3.3664007, 1.426694, 6.8422494)
@@ -784,6 +821,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_41ko5")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -7.9640284, -0.4389223, 10.890018)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00038290024, -0.0026407242)
 transparency = 0.52
 mesh = SubResource("PlaneMesh_bq8qh")
 skeleton = NodePath("../..")
@@ -804,7 +842,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_41ko5")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="fog"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-07, -2.8376484, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0077022314, -2.8350897, -0.00031375885)
 mesh = SubResource("PlaneMesh_bq8qh")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_41ko5")
@@ -845,6 +883,81 @@ surface_material_override/0 = SubResource("StandardMaterial3D_apkel")
 
 [node name="Shotgun" parent="." instance=ExtResource("11_n6xc3")]
 transform = Transform3D(-1, 0, -1.509958e-07, 3.1710787e-08, 0.97769904, -0.21001107, 1.4762844e-07, -0.21001107, -0.97769904, -3.2125816, 0.8670691, 5.6142764)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1107.0
+offset_top = -906.0
+offset_right = 1204.0
+offset_bottom = 746.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CardboardBox_12" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6883445, 1.0430828, -2.9001064)
+
+[node name="CardboardBox_13" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(0.8815013, 0, 0.47218156, 0, 1, 0, -0.47218156, 0, 0.8815013, 1.6978958, 0.21523115, 5.2275457)
+
+[node name="CardboardBox_17" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(1.1692805, 0, 2.445409, 0, 0.089999996, 0, -1.3750665, 0, 2.0794406, 0.09718478, -0.017648488, 6.7888536)
+
+[node name="CardboardBox_18" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(2.354756, 0, 3.1043744, 0, 0.09, 0, -2.7691784, 0, 2.6397884, 1.7681646, -0.017648488, -1.903142)
+
+[node name="CardboardBox_14" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(1.4706842, 0, 0.16579545, 0, 1.48, 0, -0.16579545, 0, 1.4706842, 2.440644, 0.36424133, 5.1032386)
+
+[node name="CardboardBox_16" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(0.755514, 0, 0.29205903, 0, 0.8100001, 0, -0.29205903, 0, 0.755514, 4.598876, 1.0025975, 3.6166275)
+
+[node name="CardboardBox_15" parent="." instance=ExtResource("31_rsgor")]
+transform = Transform3D(0.8159662, 0, 0.5780998, 0, 1, 0, -0.5780998, 0, 0.8159662, 4.6506295, 2.1507695, 5.034334)
+
+[node name="trash-bag" parent="." instance=ExtResource("32_8ury5")]
+transform = Transform3D(-0.3075227, 0, 0.9515407, 0, 1, 0, -0.9515407, 0, -0.3075227, -0.94435173, -0.03476977, -2.9084995)
+
+[node name="glass-bottle" parent="." instance=ExtResource("33_ywkan")]
+transform = Transform3D(0.926246, -0.37674433, 0.0114908535, 0, 0.030486226, 0.9995352, -0.3769195, -0.92581546, 0.028237745, 1.1113802, 0.049718026, 4.0252166)
+
+[node name="glass-bottle3" parent="." instance=ExtResource("33_ywkan")]
+transform = Transform3D(0.9841907, 0.11691919, -0.13303581, -0.117537916, 0.9930633, 0.003220424, 0.13248949, 0.01246725, 0.99110603, -3.222303, 0.8215586, 6.6874995)
+
+[node name="glass-bottle4" parent="." instance=ExtResource("33_ywkan")]
+transform = Transform3D(0.9841907, 0.11691919, -0.13303581, -0.117537916, 0.9930633, 0.003220424, 0.13248949, 0.01246725, 0.99110603, -3.0867262, 0.82155854, 6.7827144)
+
+[node name="glass-bottle5" parent="." instance=ExtResource("33_ywkan")]
+transform = Transform3D(0.98419064, 0.11691919, -0.1330358, 0.12765503, 0.0523972, 0.99043363, 0.1227714, -0.99175835, 0.0366435, -3.0768058, 0.84052867, 6.6173577)
+
+[node name="glass-bottle2" parent="." instance=ExtResource("33_ywkan")]
+transform = Transform3D(0.42661607, 0.9040126, -0.027572751, 4.130024e-10, 0.030486226, 0.99953526, 0.9044329, -0.4264179, 0.013005914, 1.5824255, 0.049718026, 3.8686461)
+
+[node name="crumpled-can" parent="." instance=ExtResource("34_8wiy8")]
+transform = Transform3D(0.71918213, 0, -0.6948216, 0, 1, 0, 0.6948216, 0, 0.71918213, 1.3365078, -0.03476942, 4.2721086)
+
+[node name="crumpled-can4" parent="." instance=ExtResource("34_8wiy8")]
+transform = Transform3D(0.71918213, 0, -0.6948216, 0, 1, 0, 0.6948216, 0, 0.71918213, -2.6362464, -0.034769658, 5.6249604)
+
+[node name="crumpled-can5" parent="." instance=ExtResource("34_8wiy8")]
+transform = Transform3D(-0.96481025, 0, 0.26294702, 0, 1, 0, -0.26294702, 0, -0.96481025, -2.7007325, -0.034769658, 4.7145567)
+
+[node name="crumpled-can3" parent="." instance=ExtResource("34_8wiy8")]
+transform = Transform3D(0.3728096, 0, -0.9279078, 0, 1, 0, 0.9279078, 0, 0.3728096, 1.5495436, -0.03476942, 3.5039303)
+
+[node name="crumpled-can2" parent="." instance=ExtResource("34_8wiy8")]
+transform = Transform3D(0.33334616, 0, 0.9428045, 0, 1, 0, -0.9428045, 0, 0.33334616, 2.1261718, -0.034769405, 3.9268246)
+
+[node name="barrel" parent="." instance=ExtResource("35_ywkan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7190926, -0.034769665, 5.1539783)
+
+[node name="cardboard-box" parent="." instance=ExtResource("36_8wiy8")]
+transform = Transform3D(0.8508478, 0, -0.52541226, 0, 1, 0, 0.52541226, 0, 0.8508478, -1.1396708, -0.034769576, 3.1166878)
 
 [connection signal="area_entered" from="order_drop_off" to="order_drop_off" method="_on_area_entered"]
 [connection signal="body_entered" from="window_area" to="window_area" method="_on_body_entered"]

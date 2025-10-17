@@ -17,7 +17,7 @@ var orders = {
 		"taco": 99
 	}, #homeless person
 	"customer7": {"onion": 4, "tomato": 1, "patty": 3}, #human
-	"customer8": {}, #monster
+	"customer8": {"Your Eyes": 1}, #monster
 }
 
 @onready var label = $"../Monitor/Label3D"
@@ -32,10 +32,15 @@ func _ready():
 func interact():
 	car.arrive()
 	if Global.order_started == false:
+		print("CURRENT: ", current_index)
+
 		Global.order_started = true
 		label.text = "" 
 		if current_index >= order_keys.size():
-			label.text = "All orders shown!"
+			$"../WindowAnim".play("fade")
+			$"../ColorRect".visible = true
+			await get_tree().create_timer(1).timeout
+			get_tree().change_scene_to_file("res://scenes/levels/end.tscn")
 			return
 		
 		var key = order_keys[current_index]

@@ -23,7 +23,8 @@ func _process(_delta: float) -> void:
 					raycast.get_parent().has_gun = true
 					
 			elif collider.collision_layer == 8:
-				collider.interact() # call method interact from collider object
+				if collider.has_method("interact"):
+					collider.interact() # call method interact from collider object
 				pass
 
 func pickup_item() -> void:
